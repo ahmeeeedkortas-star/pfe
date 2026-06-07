@@ -1,0 +1,10 @@
+{
+  "documentTypes": ["SMI", "Procédures", "Instructions de travail", "Enregistrements"],
+  "processes": ["Management QHSE", "Production", "Maintenance", "Audit interne"],
+  "zones": ["Siège", "Atelier Usinage", "Logistique"],
+  "posts": ["CNC-01", "CNC-02", "Presse-01"],
+  "isoNorms": ["ISO 9001", "ISO 14001", "ISO 45001"],
+  "unreadDaysThreshold": 90,
+  "isoReviewMonths": 12,
+  "codePrefix": "DOC"
+}

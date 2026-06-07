@@ -1,0 +1,44 @@
+/* Module Documentation (React) — intégration plateforme QHSE */
+#content.doc-mode {
+  overflow: auto;
+  padding: 12px 16px 24px;
+  background: #f1f5f9;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-module-root {
+  flex: 1;
+  width: 100%;
+  min-height: 640px;
+  position: relative;
+  z-index: 1;
+  --doc-red: #a32d2d;
+  --doc-blue: #185fa5;
+}
+
+#content.doc-mode .doc-module-root,
+#content.doc-mode .doc-embedded,
+#content.doc-mode .doc-embedded * {
+  visibility: visible;
+}
+
+#content.doc-mode .doc-embedded .doc-card,
+#content.doc-mode .doc-module-root .card {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.doc-module-root .doc-embedded {
+  font-family: Inter, 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+body.doc-module-active {
+  background: #f1f5f9;
+}

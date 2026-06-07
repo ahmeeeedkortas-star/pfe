@@ -1,0 +1,107 @@
+/**
+ * Pages Actions RC / NC / SST / ENV — texte lisible malgré les styles inline legacy.
+ */
+.content.actions-mode .xm-actions-page {
+  --act-base: 14px;
+  --act-meta: 13px;
+  --act-title: 15px;
+  --act-kpi: 24px;
+  --act-kpi-lbl: 12px;
+  font-size: var(--act-base);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.content.actions-mode .xm-actions-page *:not(svg):not(path):not(circle):not(text) {
+  font-size: inherit !important;
+}
+
+.content.actions-mode .xm-actions-page svg text {
+  font-size: 13px !important;
+}
+
+/* KPI principaux */
+.content.actions-mode .xm-actions-page > div[style*='grid-template-columns'] div[style*='font-weight:800'],
+.content.actions-mode .xm-actions-page > div[style*='grid-template-columns'] div[style*='font-weight:700'][style*='line-height:1'] {
+  font-size: var(--act-kpi) !important;
+  line-height: 1.15 !important;
+}
+
+.content.actions-mode .xm-actions-page > div[style*='grid-template-columns'] > div > div > div:last-child > div:last-child,
+.content.actions-mode .xm-actions-page .xm-act-kpi-lbl {
+  font-size: var(--act-kpi-lbl) !important;
+  opacity: 0.85;
+}
+
+/* Titres cartes action */
+.content.actions-mode .xm-actions-page div[style*='font-weight:700'][style*='line-height:1.4'],
+.content.actions-mode .xm-actions-page div[style*='font-weight:700'][style*='line-height:1.35'],
+.content.actions-mode .xm-actions-page td[style*='font-weight:700'],
+.content.actions-mode .xm-actions-page td[style*='font-weight:600'] {
+  font-size: var(--act-title) !important;
+}
+
+/* Meta / descriptions */
+.content.actions-mode .xm-actions-page div[style*='color:#94a3b8'],
+.content.actions-mode .xm-actions-page div[style*='color:var(--muted)'],
+.content.actions-mode .xm-actions-page span[style*='color:var(--muted)'] {
+  font-size: var(--act-meta) !important;
+}
+
+.content.actions-mode .xm-actions-page .badge {
+  font-size: 12px !important;
+  padding: 4px 10px !important;
+  line-height: 1.3 !important;
+}
+
+.content.actions-mode .xm-actions-page .sel,
+.content.actions-mode .xm-actions-page select.sel,
+.content.actions-mode .xm-actions-page input:not([type='range']):not([type='hidden']) {
+  font-size: 14px !important;
+  min-height: 40px;
+}
+
+.content.actions-mode .xm-actions-page button {
+  font-size: 13px !important;
+  padding: 6px 12px !important;
+  min-height: 34px;
+}
+
+.content.actions-mode .xm-actions-page button.bsm,
+.content.actions-mode .xm-actions-page .btn.bsm {
+  font-size: 13px !important;
+  padding: 7px 14px !important;
+}
+
+.content.actions-mode .xm-actions-page .tbl th,
+.content.actions-mode .xm-actions-page table thead th {
+  font-size: 12px !important;
+  padding: 12px 14px !important;
+  letter-spacing: 0.04em;
+}
+
+.content.actions-mode .xm-actions-page .tbl td,
+.content.actions-mode .xm-actions-page table tbody td {
+  font-size: var(--act-base) !important;
+  padding: 12px 14px !important;
+  vertical-align: middle;
+}
+
+.content.actions-mode .xm-actions-page input[type='range'] {
+  height: 6px !important;
+  margin-top: 6px !important;
+}
+
+.content.actions-mode .xm-actions-page [style*='border-radius:9px'][style*='padding:11px'],
+.content.actions-mode .xm-actions-page [style*='border-radius:10px'][style*='padding:12px'] {
+  padding: 14px 16px !important;
+}
+
+.content.actions-mode .xm-actions-page [style*='min-height:180px'],
+.content.actions-mode .xm-actions-page [style*='min-height:220px'] {
+  padding: 14px !important;
+}
+
+.content.actions-mode .xm-actions-page .card {
+  padding: 14px 18px !important;
+}

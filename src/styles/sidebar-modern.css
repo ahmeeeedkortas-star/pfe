@@ -1,0 +1,76 @@
+/**
+ * Sidebar XPERT-MECA — moderne, fluide, module actif mis en valeur.
+ */
+
+/* Fond sidebar : sidebar-glass.css */
+
+.sidebar.sidebar--collapsed.is-expanded,
+.sidebar.sidebar--collapsed:hover,
+.sidebar.sidebar--collapsed:focus-within {
+  box-shadow:
+    8px 0 32px rgba(10, 10, 10, 0.25),
+    inset -1px 0 0 rgba(226, 27, 36, 0.12) !important;
+}
+
+.sidebar--collapsed .s-item,
+.sidebar--collapsed .s-foot--item {
+  border-radius: 10px;
+  margin: 2px 6px;
+}
+
+.sidebar--collapsed .s-item:hover,
+.sidebar--collapsed .s-foot--item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateX(2px);
+}
+
+/* Active : sidebar-glass.css */
+
+.sidebar--collapsed .s-item.active .xm-icon-sidebar {
+  transform: scale(1.06);
+}
+
+.sidebar--collapsed .s-item.active .s-item-label {
+  color: #fff;
+  font-weight: 600;
+}
+
+.s-head-brand {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 4px;
+}
+
+.s-head-brand .xm-brand-logo {
+  transition: transform 0.28s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.sidebar:hover .s-head-brand .xm-brand-logo,
+.sidebar.is-expanded .s-head-brand .xm-brand-logo {
+  transform: scale(1.03);
+}
+
+.s-section {
+  color: rgba(255, 255, 255, 0.35) !important;
+  font-size: 9px !important;
+  letter-spacing: 0.16em !important;
+}
+
+.xm-icon-sidebar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.s-item:hover .xm-icon-sidebar {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Icône active : sidebar-glass.css + icons.css */

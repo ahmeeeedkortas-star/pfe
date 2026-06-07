@@ -1,0 +1,10 @@
+{
+  "documentTypes": ["SMI", "Procédure", "Instruction", "Enregistrement"],
+  "processes": ["Usinage", "Assemblage", "Qualité"],
+  "zones": ["Atelier", "Bureau", "Production"],
+  "posts": [],
+  "isoNorms": ["ISO 9001", "ISO 14001", "ISO 45001"],
+  "unreadDaysThreshold": 90,
+  "isoReviewMonths": 12,
+  "codePrefix": "DOC"
+}

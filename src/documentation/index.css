@@ -1,0 +1,131 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand: #e21b24;
+  --color-brand-red: #e21b24;
+  --color-brand-black: #0a0a0a;
+  --color-surface: #f7f7f8;
+  --color-border: #e5e5e8;
+}
+
+.doc-module-root,
+.doc-module-root .doc-embedded {
+  font-family: Inter, 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: #0f172a;
+  background: transparent;
+  min-height: 480px;
+  --doc-red: #e21b24;
+  --doc-blue: #e21b24;
+  --doc-black: #0a0a0a;
+}
+
+.doc-embedded .doc-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.doc-embedded a:focus-visible,
+.doc-embedded button:focus-visible {
+  outline: 2px solid #e21b24;
+  outline-offset: 2px;
+}
+
+.doc-embedded .doc-page-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.doc-embedded .doc-btn-primary {
+  border-radius: 0.5rem;
+  background: var(--doc-blue);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.doc-embedded .doc-btn-primary:hover {
+  background: #b8151c;
+}
+
+.doc-embedded .doc-btn-accent {
+  background: var(--doc-red);
+}
+
+/* —— Panneau de contrôle type Odoo —— */
+.doc-embedded .odoo-cp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 0.375rem;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.doc-embedded .odoo-cp-btn:hover {
+  background: #f8fafc;
+}
+
+.doc-embedded .odoo-cp-btn-active {
+  border-color: #e21b24;
+  background: #fef2f2;
+  color: #e21b24;
+}
+
+.doc-embedded .odoo-badge {
+  display: inline-flex;
+  min-width: 1.1rem;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #e21b24;
+  padding: 0 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.doc-embedded .odoo-btn-primary {
+  border-radius: 0.375rem;
+  background: #e21b24;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.doc-embedded .odoo-btn-primary:hover {
+  background: #b8151c;
+}
+
+.doc-embedded .odoo-dd-item {
+  display: block;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.8125rem;
+}
+
+.doc-embedded .odoo-dd-item:hover {
+  background: #f1f5f9;
+}
+
+.doc-embedded .odoo-dd-item-active {
+  background: #fef2f2;
+  color: #e21b24;
+}
+
+.doc-embedded .odoo-kanban-card:hover {
+  border-color: #e21b24;
+}
+
+.doc-embedded .odoo-field input,
+.doc-embedded .odoo-field select,
+.doc-embedded .odoo-field textarea {
+  width: 100%;
+}

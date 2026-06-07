@@ -1,0 +1,504 @@
+/**
+ * Plateforme QHSE — design system unifié bleu/blanc
+ * Source unique pour composants, typo, icônes, animations (tous modules).
+ */
+
+/* ── Tokens runtime (alignés variables.css) ── */
+:root {
+  --bg: var(--color-surface-muted, #f8fafc);
+  --blue: var(--color-primary, #0284c7);
+  --shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 6px 20px rgba(2, 132, 199, 0.13);
+  --shadow-primary: 0 2px 8px rgba(2, 132, 199, 0.28);
+  --icon-size-sm: 16px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 24px;
+  --icon-tile-nav: 38px;
+  --icon-tile-sidebar: 32px;
+}
+
+/* ── Base & hiérarchie typo ── */
+html {
+  font-size: var(--fs-base);
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  line-height: var(--lh);
+  color: var(--color-text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mod-title,
+.xm-page-title,
+.ct {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.mod-sub,
+.doc-page-sub {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.fl,
+.doc-meta-label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Layout contenu ── */
+.content:not(.home-mode) {
+  padding: var(--space-content-y) var(--space-content-x);
+}
+
+.content-inner {
+  padding: 0 var(--space-content-x) var(--space-4);
+}
+
+/* ── Cartes ── */
+.card,
+.odoo-panel,
+.xm-v11-card,
+.kc,
+.mod-card {
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border) !important;
+  background: var(--color-surface) !important;
+  box-shadow: var(--shadow) !important;
+  transition:
+    box-shadow var(--transition),
+    transform var(--transition-fast),
+    border-color var(--transition-fast) !important;
+  animation: fadeInUp 0.28s var(--ease-premium);
+}
+
+.card:hover,
+.kc:hover,
+.mod-card:hover {
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.content.is-interactive-page .card,
+.content.is-interactive-page .kc {
+  animation: none;
+}
+
+/* ── Boutons ── */
+.btn,
+.odoo-btn,
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 34px;
+  height: auto;
+  padding: var(--btn-pad);
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: #334155;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast),
+    color var(--transition-fast) !important;
+  cursor: pointer;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.btn.bp,
+.btn-primary,
+.bp {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: var(--shadow-primary) !important;
+}
+
+.btn.bp:hover,
+.btn-primary:hover,
+.bp:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+  filter: brightness(1.03);
+}
+
+.bsm {
+  min-height: 30px;
+  padding: 5px 12px;
+  font-size: var(--fs-xs);
+}
+
+/* ── Formulaires ── */
+.fi,
+.sel,
+.filter-sel,
+textarea.fi,
+.odoo-field input,
+.odoo-field select,
+.odoo-field textarea {
+  border-radius: 8px !important;
+  border: 1.5px solid var(--color-border) !important;
+  padding: 8px 12px !important;
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast) !important;
+}
+
+.fi:focus,
+.sel:focus,
+.filter-sel:focus,
+textarea.fi:focus {
+  outline: none !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px var(--color-primary-ring) !important;
+}
+
+/* ── Tableaux ── */
+.tbl {
+  font-size: var(--fs-sm);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.tbl thead {
+  background: var(--color-surface-muted);
+}
+
+.tbl th {
+  background: var(--color-surface-muted) !important;
+  border-bottom: 2px solid var(--color-border) !important;
+  font-size: var(--fs-xs) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted) !important;
+  padding: 10px 12px !important;
+}
+
+.tbl td {
+  padding: 10px 12px !important;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  transition: background 0.1s ease;
+}
+
+.tbl tbody tr:hover td {
+  background: var(--color-surface-muted) !important;
+}
+
+.tbl tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Badges & onglets ── */
+.badge,
+.status-pill,
+.odoo-badge {
+  border-radius: 20px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 3px 10px;
+}
+
+.tab,
+.kpi-tab {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tab.active,
+.kpi-tab.active {
+  color: var(--color-primary) !important;
+  border-bottom-color: var(--color-primary) !important;
+}
+
+/* ── Sidebar ── */
+.s-item {
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 2px 8px;
+  font-size: var(--fs-sm);
+  transition: all var(--transition-fast);
+}
+
+.s-item:hover:not(.active):not([aria-disabled='true']) {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+}
+
+.s-item.active {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-left: 3px solid var(--color-primary) !important;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: none !important;
+}
+
+.s-item.active::before {
+  display: none !important;
+}
+
+.s-item.active .xm-icon-sidebar,
+.s-item.active .xm-icon-sidebar.is-active {
+  background: rgba(2, 132, 199, 0.22) !important;
+  color: #fff !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.25) !important;
+}
+
+/* ── Icon nav module ── */
+.ini {
+  border-radius: 10px;
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.ini-lb {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+.ini:not(.active) .xm-icon-tile {
+  width: var(--icon-tile-nav);
+  height: var(--icon-tile-nav);
+  border-radius: 11px;
+  background: linear-gradient(160deg, #fff 0%, #f8fafc 100%) !important;
+  color: #475569 !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+#main .ini.active {
+  background: var(--color-primary-soft) !important;
+  border-color: color-mix(in srgb, var(--color-primary) 18%, var(--color-border)) !important;
+}
+
+#main .ini.active .ini-lb {
+  color: var(--color-primary) !important;
+}
+
+#main .ini.active .xm-icon-tile,
+#main .xm-icon-tile.is-active {
+  background: var(--color-primary-soft) !important;
+  color: var(--color-primary) !important;
+  border-color: color-mix(in srgb, var(--color-primary) 25%, transparent) !important;
+}
+
+/* ── Icônes uniformes ── */
+.xm-icon--sm svg {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.xm-icon--md svg {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+.xm-icon--lg svg {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+
+.xm-icon-sidebar {
+  width: var(--icon-tile-sidebar) !important;
+  height: var(--icon-tile-sidebar) !important;
+  border-radius: 10px !important;
+}
+
+.xm-icon svg,
+.xm-icon-sidebar svg {
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Topbar & module chrome ── */
+.topbar {
+  background: #fff !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.topbar::after {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 55%, transparent 100%) !important;
+  opacity: 0.65 !important;
+  height: 2px !important;
+}
+
+.t-avatar {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)) !important;
+}
+
+.mod-topbar {
+  background: #fff !important;
+  border: 1px solid var(--color-border) !important;
+  border-left: 4px solid var(--color-primary) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.icon-nav {
+  background: #fff !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* ── KPI & dashboards ── */
+.kc,
+.xm-kpi-stat,
+.xm-kpi-banner,
+.xm-kpi-card-center,
+.xm-kpi-stat {
+  border-radius: 13px !important;
+  padding: 16px 18px !important;
+  background: var(--color-surface) !important;
+}
+
+.kv,
+.xm-kpi-stat__value {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.kl,
+.xm-kpi-stat__label {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kc:hover,
+.xm-kpi-stat:hover {
+  border-top-color: var(--color-primary) !important;
+}
+
+/* ── Filtres ── */
+.filter-bar,
+.xm-filter-bar,
+.doc-mode-tabs {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-3);
+}
+
+/* ── Modales & toasts ── */
+.xm-modal,
+.modal {
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+}
+
+.xm-toast-item {
+  border-left-color: var(--color-primary) !important;
+  border-radius: 10px;
+}
+
+/* ── Animations premium ── */
+#main #content:not(.home-mode) > .card,
+#main #content:not(.home-mode) .card:first-child {
+  animation: fadeInUp 0.3s var(--ease-premium);
+}
+
+.ini,
+.btn,
+.s-item {
+  transition-timing-function: var(--ease-premium);
+}
+
+/* ── Boutons danger (sémantique conservée) ── */
+.btn-danger {
+  background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+/* ── Liens & états actifs globaux ── */
+a:hover,
+.doc-link:hover,
+.date-hierarchy-filter .dh-active {
+  color: var(--color-primary) !important;
+}
+
+/* ── Progress & loaders ── */
+.platform-progress__bar,
+.platform-loading-bar {
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary)) !important;
+}
+
+/* ── Héros modules (nuances bleu) ── */
+.sst-hero,
+.acc-hero,
+.env-hero,
+.fives-hero,
+.rc-new-banner {
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* ── Scrollbar contenu ── */
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .kc,
+  .btn,
+  .ini {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .btn:hover,
+  .card:hover {
+    transform: none !important;
+  }
+}

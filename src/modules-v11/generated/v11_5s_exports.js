@@ -1,0 +1,7 @@
+/** Auto-generated from qhse_v11.html — do not edit by hand */
+export function v11_5s_exports() {
+
+  var exports=[['📊','Export Excel — Zones','Données complètes zones, scores et piliers','#16a34a','#f0fdf4','csv'],['📄','Export PDF — Rapport','Rapport complet avec graphiques et analyses','#dc2626','#fef2f2','pdf'],['📋','Export Checklist','Template checklist 5S vierge par zone','#2563eb','#eff6ff','checklist'],['⚠','Export Écarts','Liste complète des écarts et non-conformités','#f59e0b','#fffbeb','ecarts'],['⚡','Export Actions','Plan d\'actions avec statuts et progression','#7c3aed','#f5f3ff','actions'],['📅','Export Planning','Calendrier complet des audits 5S','#0891b2','#ecfeff','planning']];
+  return '<div class="content"><div class="card"><div class="ch"><span class="ct">📤 Exports 5S</span></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">'+exports.map(function(e){return '<div style="background:'+e[4]+';border:1px solid '+e[3]+'25;border-radius:11px;padding:16px;text-align:center"><div style="font-size:28px;margin-bottom:7px">'+e[0]+'</div><div style="font-size:12px;font-weight:700;color:'+e[3]+';margin-bottom:4px">'+e[1]+'</div><div style="font-size:10px;color:#94a3b8;margin-bottom:11px;line-height:1.4">'+e[2]+'</div><button onclick="ss5Export(\''+e[5]+'\')" class="btn" style="width:100%;background:'+e[3]+';color:#fff;border-color:'+e[3]+'">Exporter</button></div>';}).join('')+'</div></div></div>';
+
+}

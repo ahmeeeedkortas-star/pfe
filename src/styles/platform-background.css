@@ -1,0 +1,21 @@
+/**
+ * Fond plateforme — neutre (l'accueil industriel gère son propre fond).
+ */
+#app-shell::before,
+#app-shell::after {
+  display: none !important;
+}
+
+#app-shell {
+  background: var(--bg, #eef2f8) !important;
+}
+
+#app-shell > .body,
+#app-shell .main,
+#app-shell #content {
+  background: transparent;
+}
+
+.content.home-mode {
+  background: transparent !important;
+}

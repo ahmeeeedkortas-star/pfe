@@ -1,0 +1,191 @@
+/**
+ * Sidebar repliable — icônes par défaut, expansion au survol (ERP moderne).
+ */
+
+.sidebar.sidebar--collapsed {
+  width: var(--sw-collapsed);
+  flex-shrink: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 120;
+  transition:
+    width var(--sidebar-duration) var(--sidebar-ease),
+    box-shadow var(--sidebar-duration) var(--sidebar-ease);
+}
+
+.sidebar.sidebar--collapsed.is-expanded,
+.sidebar.sidebar--collapsed:hover,
+.sidebar.sidebar--collapsed:focus-within {
+  width: var(--sw-expanded);
+  box-shadow: 6px 0 36px rgba(12, 26, 51, 0.22);
+}
+
+/* ── En-tête ── */
+.sidebar--collapsed .s-head-brand {
+  transition: padding var(--sidebar-duration) var(--sidebar-ease), gap var(--sidebar-duration) var(--sidebar-ease);
+}
+
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within):not(:focus-within) .s-head-brand {
+  justify-content: center;
+  padding: 12px 10px;
+  gap: 0;
+}
+
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-head-brand .xm-brand-logo {
+  height: 30px;
+  max-width: 44px;
+}
+
+.sidebar--collapsed .s-head-brand-text {
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    opacity calc(var(--sidebar-duration) * 0.85) var(--sidebar-ease),
+    max-width var(--sidebar-duration) var(--sidebar-ease),
+    transform var(--sidebar-duration) var(--sidebar-ease);
+}
+
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-head-brand-text {
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-8px);
+  pointer-events: none;
+}
+
+.sidebar--collapsed.is-expanded .s-head-brand-text,
+.sidebar--collapsed:hover .s-head-brand-text,
+.sidebar--collapsed:focus-within .s-head-brand-text {
+  opacity: 1;
+  max-width: 160px;
+  transform: none;
+}
+
+/* ── Sections ── */
+.sidebar--collapsed .s-section {
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    opacity calc(var(--sidebar-duration) * 0.85) var(--sidebar-ease),
+    max-height var(--sidebar-duration) var(--sidebar-ease),
+    padding var(--sidebar-duration) var(--sidebar-ease);
+}
+
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-section {
+  opacity: 0;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 6px 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar--collapsed.is-expanded .s-section,
+.sidebar--collapsed:hover .s-section,
+.sidebar--collapsed:focus-within .s-section {
+  opacity: 1;
+  max-height: 32px;
+}
+
+/* ── Items ── */
+.sidebar--collapsed .s-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 8px 8px 16px;
+}
+
+.sidebar--collapsed .s-foot--item {
+  margin-top: auto;
+}
+
+.sidebar--collapsed .s-item,
+.sidebar--collapsed .s-foot--item {
+  justify-content: flex-start;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    padding var(--sidebar-duration) var(--sidebar-ease),
+    gap var(--sidebar-duration) var(--sidebar-ease);
+}
+
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-item,
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-foot--item {
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-item:hover {
+  transform: none;
+}
+
+.sidebar--collapsed .s-item-label,
+.sidebar--collapsed .s-foot-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    opacity calc(var(--sidebar-duration) * 0.85) var(--sidebar-ease),
+    max-width var(--sidebar-duration) var(--sidebar-ease),
+    transform var(--sidebar-duration) var(--sidebar-ease);
+}
+
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-item-label,
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-foot-label {
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-6px);
+  pointer-events: none;
+}
+
+.sidebar--collapsed.is-expanded .s-item-label,
+.sidebar--collapsed:hover .s-item-label,
+.sidebar--collapsed:focus-within .s-item-label,
+.sidebar--collapsed.is-expanded .s-foot-label,
+.sidebar--collapsed:hover .s-foot-label,
+.sidebar--collapsed:focus-within .s-foot-label {
+  opacity: 1;
+  max-width: 180px;
+  transform: none;
+}
+
+/* Tooltip natif en mode compact */
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-item[title],
+.sidebar--collapsed:not(.is-expanded):not(:hover):not(:focus-within) .s-foot--item[title] {
+  position: relative;
+}
+
+/* ── Pied de page Aide ── */
+.s-foot--item {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 12px);
+  margin: 8px 6px 0;
+  padding: 10px 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  gap: 12px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.s-foot--item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar.sidebar--collapsed,
+  .sidebar--collapsed .s-item-label,
+  .sidebar--collapsed .s-head-brand-text,
+  .sidebar--collapsed .s-section {
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,257 @@
+/**
+ * Fond industriel page d'accueil — robotique · machines spéciales · SMI QHSE
+ */
+
+@keyframes homeSceneDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-12px, -8px) scale(1.02);
+  }
+}
+
+@keyframes homeScanPulse {
+  0%,
+  100% {
+    opacity: 0.03;
+  }
+  50% {
+    opacity: 0.07;
+  }
+}
+
+@keyframes homeWheelSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes homeIsoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Fond de base : atelier lumineux */
+.home-wrap--industrial.home-wrap--live,
+.content.home-mode .home-wrap--industrial {
+  background: linear-gradient(
+    165deg,
+    #f5f5f6 0%,
+    #ececed 28%,
+    #e8e8ea 55%,
+    #f0f0f2 100%
+  ) !important;
+}
+
+.home-wrap--industrial .home-bg--industrial {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Voile lisibilité */
+.home-wrap--industrial .home-bg__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(248, 248, 249, 0.88) 35%,
+    rgba(245, 245, 246, 0.9) 70%,
+    rgba(255, 255, 255, 0.94) 100%
+  );
+}
+
+.home-wrap--industrial .home-bg__scene {
+  position: absolute;
+  inset: -5% -10%;
+  z-index: 0;
+  animation: homeSceneDrift 28s ease-in-out infinite;
+}
+
+.home-wrap--industrial .home-scene-svg {
+  width: 110%;
+  height: 110%;
+  min-height: 100%;
+  display: block;
+}
+
+.home-wrap--industrial .home-scene-wheel {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: homeWheelSpin 12s linear infinite;
+}
+
+.home-wrap--industrial .home-scene-wheel:nth-child(odd) {
+  animation-duration: 16s;
+  animation-direction: reverse;
+}
+
+/* Ligne scan technologique */
+.home-wrap--industrial .home-bg__scan {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(226, 27, 36, 0.04) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: homeScanPulse 6s ease-in-out infinite;
+}
+
+/* ISO flottants */
+.home-wrap--industrial .home-iso-float {
+  position: absolute;
+  top: 18%;
+  right: 4%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0.55;
+}
+
+.home-wrap--industrial .home-iso-chip {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(10, 10, 10, 0.06);
+  animation: homeIsoFloat 4s ease-in-out infinite;
+}
+
+.home-wrap--industrial .home-iso-chip--9001 {
+  color: #e21b24;
+  border-left: 3px solid #e21b24;
+  animation-delay: 0s;
+}
+
+.home-wrap--industrial .home-iso-chip--14001 {
+  color: #059669;
+  border-left: 3px solid #059669;
+  animation-delay: 0.5s;
+}
+
+.home-wrap--industrial .home-iso-chip--45001 {
+  color: #ea580c;
+  border-left: 3px solid #ea580c;
+  animation-delay: 1s;
+}
+
+/* Bandeau activité entreprise */
+.home-wrap--industrial .home-activity-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+  background: rgba(226, 27, 36, 0.08);
+  border: 1px solid rgba(226, 27, 36, 0.15);
+}
+
+.home-wrap--industrial .home-activity-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-red);
+  box-shadow: 0 0 8px var(--brand-red);
+  animation: homeScanPulse 2s ease-in-out infinite;
+}
+
+.home-wrap--industrial .home-hero-lead {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 12px auto 0;
+  font-weight: 500;
+}
+
+/* Piliers SMI */
+.home-wrap--industrial .home-smi-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.home-wrap--industrial .home-smi-pillar {
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 3px solid var(--pillar-color);
+  text-align: left;
+  min-width: 120px;
+  box-shadow: 0 2px 10px rgba(10, 10, 10, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-wrap--industrial .home-smi-pillar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(10, 10, 10, 0.08);
+}
+
+.home-wrap--industrial .home-smi-pillar__k {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--brand-black);
+}
+
+.home-wrap--industrial .home-smi-pillar__iso {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Cartes plus opaques sur fond illustré */
+.home-wrap--industrial .home-hero {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
+.home-wrap--industrial .home-kpi-card,
+.home-wrap--industrial .hmod-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-wrap--industrial .home-bg__scene,
+  .home-wrap--industrial .home-scene-wheel,
+  .home-wrap--industrial .home-iso-chip,
+  .home-wrap--industrial .home-bg__scan {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-wrap--industrial .home-iso-float {
+    display: none;
+  }
+}

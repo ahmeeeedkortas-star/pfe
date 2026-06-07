@@ -1,0 +1,282 @@
+/**
+ * Design system XPERT-MECA — harmonisation globale
+ * Icônes · arrière-plans · composants · animations
+ */
+
+/* ═══════════════════════════════════════════
+   FONDS APPLICATION
+   ═══════════════════════════════════════════ */
+
+:root {
+  --app-page-bg: transparent;
+  --app-bg-dark: linear-gradient(
+    180deg,
+    var(--brand-black) 0%,
+    var(--brand-black-soft) 38%,
+    var(--brand-charcoal) 100%
+  );
+  --app-hero-bg: linear-gradient(135deg, var(--brand-black-soft) 0%, var(--brand-charcoal) 55%, var(--brand-graphite) 100%);
+  --app-grid-line: rgba(255, 255, 255, 0.04);
+  --app-glow-red: rgba(226, 27, 36, 0.14);
+  --app-glow-neutral: rgba(255, 255, 255, 0.06);
+
+  --icon-stroke-width: 2;
+  --icon-stroke-width-bold: 2.25;
+
+  --ds-card-radius: var(--radius-lg);
+  --ds-btn-radius: var(--radius-md);
+}
+
+/* Zone contenu modules (hors accueil / plein écran SST) */
+#main #content:not(.home-mode):not(.sst-mode) {
+  background: var(--app-page-bg) !important;
+}
+
+.content {
+  background: transparent;
+}
+
+/* Accueil : design isolé — voir home-modern.css (ne pas surcharger) */
+#main #content.home-mode,
+.content.home-mode {
+  background: transparent !important;
+}
+
+/* Fonds modules : voir platform-background.css + module-surface.css */
+.fives-page,
+.env-page,
+.sec-sst-page,
+.cst-page,
+.audit-page,
+.rc-page,
+.nc-page {
+  background: transparent !important;
+}
+
+.sec-sst-modern .acc-hero--accident {
+  background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 50%, #3d1515 100%) !important;
+}
+
+/* ═══════════════════════════════════════════
+   ICÔNES — taille · trait · couleur
+   ═══════════════════════════════════════════ */
+
+.xm-icon svg,
+.xm-icon-sidebar svg,
+.xm-home-mod-icon svg,
+.xm-home-kpi-ic svg {
+  stroke-width: var(--icon-stroke-width);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.xm-icon--xs svg {
+  stroke-width: var(--icon-stroke-width);
+}
+.xm-icon--sm svg {
+  stroke-width: var(--icon-stroke-width);
+}
+.xm-icon--md svg {
+  stroke-width: var(--icon-stroke-width);
+}
+.xm-icon--lg svg {
+  stroke-width: var(--icon-stroke-width-bold);
+}
+
+.xm-icon-sidebar svg {
+  stroke-width: var(--icon-stroke-width);
+}
+
+/* Tuiles icon-nav — neutres ; actif = marque */
+.ini:not(.active) .xm-icon-tile {
+  background: linear-gradient(145deg, #ffffff 0%, #f5f5f6 100%) !important;
+  color: var(--brand-graphite) !important;
+  border-color: color-mix(in srgb, var(--brand-graphite) 12%, transparent) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* ini.active : module-surface.css */
+
+/* Masquer emoji legacy dans nav si présents */
+.ini-ic:not(:has(.xm-icon-tile)) {
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.s-item .s-icon emoji,
+.s-item .s-icon [data-emoji] {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════
+   COMPOSANTS UNIFIÉS (hors page d'accueil)
+   ═══════════════════════════════════════════ */
+
+.content.home-mode .home-wrap--live .card,
+.content.home-mode .home-wrap--live .btn,
+.content.home-mode .home-wrap--live .fi,
+.content.home-mode .home-wrap--live .tbl {
+  all: revert;
+}
+
+.card,
+.odoo-panel,
+.doc-card,
+.kc,
+.mod-card {
+  border-radius: var(--ds-card-radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn,
+.odoo-btn,
+.doc-btn {
+  border-radius: var(--ds-btn-radius);
+  font-family: var(--font);
+  font-weight: 600;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition),
+    color var(--transition);
+}
+
+.fi,
+.sel,
+textarea.fi,
+.odoo-field input,
+.odoo-field select,
+.odoo-field textarea {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.tbl {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.tbl th {
+  background: var(--brand-surface-muted);
+  color: var(--brand-graphite);
+  font-weight: 700;
+}
+
+.tab,
+.kpi-tab {
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: color var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+.tab.active,
+.kpi-tab.active {
+  color: var(--color-primary, #0284c7);
+}
+
+.badge,
+.status-pill,
+.odoo-badge {
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: var(--fs-xs);
+}
+
+/* Notifications */
+.xm-toast-item,
+.notif-panel {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font);
+}
+
+.xm-toast-item {
+  border-left-width: 3px;
+  border-left-color: var(--color-primary, #0284c7);
+}
+
+/* Modales */
+.modal {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+}
+
+.modal__header {
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+/* KPI */
+.kc {
+  border-top: 3px solid transparent;
+}
+
+.kc:hover {
+  border-top-color: var(--color-primary, #0284c7);
+}
+
+.kv {
+  font-family: var(--font-display);
+  color: var(--brand-black);
+}
+
+/* Dashboards module topbar */
+.mod-topbar {
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+}
+
+.icon-nav {
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS FLUIDES
+   ═══════════════════════════════════════════ */
+
+.card,
+.kc,
+.mod-card,
+.ini,
+.hmod-wrap,
+.btn {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover,
+  .kc:hover,
+  .ini:hover:not(.active),
+  .hmod:hover .hmod-wrap {
+    transform: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   MODULES — neutralisation accents bleus/verts isolés
+   ═══════════════════════════════════════════ */
+
+.ss5-cl-action--primary,
+.sec-checklist-modern .ss5-toolbar-btn--primary:not(.ss5-cl-action--danger),
+.ss5-cl-action--accent,
+.fives-pages .fives-btn-primary,
+.cst-pages .cst-btn-primary,
+.rc-new-page .btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-dark, #0369a1), var(--color-primary, #0284c7)) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}
+
+.platform-progress__bar,
+.v11-odoo-ux .o_primary {
+  background: linear-gradient(90deg, var(--color-primary, #0284c7), var(--color-primary-light, #38bdf8)) !important;
+}

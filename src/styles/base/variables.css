@@ -1,0 +1,144 @@
+:root {
+  /* ── Logo XPERT MECA (conservé pour marque) ── */
+  --brand-red: #e21b24;
+  --brand-red-dark: #b8151c;
+  --brand-red-light: #f04a52;
+  --brand-red-soft: #fef2f2;
+  --brand-red-muted: rgba(226, 27, 36, 0.14);
+  --brand-red-glow: rgba(226, 27, 36, 0.28);
+  --brand-red-glow-strong: rgba(226, 27, 36, 0.38);
+  --brand-focus-ring: rgba(59, 130, 246, 0.22);
+
+  --brand-black: #0a0a0a;
+  --brand-black-soft: #141414;
+  --brand-charcoal: #1c1c1c;
+  --brand-graphite: #2a2a2a;
+
+  --brand-white: #ffffff;
+  --brand-surface: #f7f7f8;
+  --brand-surface-muted: #eeeef0;
+
+  /* ── Pilier QHSE ── */
+  --qhse-quality: #0284c7;
+  --qhse-quality-dark: #0369a1;
+  --qhse-quality-soft: rgba(59, 130, 246, 0.16);
+  --qhse-quality-glow: rgba(59, 130, 246, 0.35);
+
+  --qhse-env: #22c55e;
+  --qhse-env-dark: #16a34a;
+  --qhse-env-soft: rgba(34, 197, 94, 0.16);
+  --qhse-env-glow: rgba(34, 197, 94, 0.32);
+
+  --qhse-sst: #f97316;
+  --qhse-sst-dark: #ea580c;
+  --qhse-sst-soft: rgba(249, 115, 22, 0.18);
+  --qhse-sst-glow: rgba(249, 115, 22, 0.35);
+
+  /* Navigation / accent UI (bleu plateforme) */
+  --accent-nav: var(--color-primary);
+  --accent-nav-dark: var(--color-primary-dark);
+  --accent-nav-muted: var(--color-primary-soft);
+
+  /* Fonds plateforme (bleu nuit) */
+  --platform-deep: #0a1020;
+  --platform-navy: #0f172a;
+  --platform-navy-mid: #1e293b;
+  --platform-glass: rgba(15, 23, 42, 0.65);
+  --platform-glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Alias legacy → pilier Qualité */
+  --navy: var(--platform-navy);
+  --navy2: var(--platform-navy-mid);
+  --blue: #0284c7;
+  --blue-soft: #eff6ff;
+
+  /* Fond & texte (modules clairs) */
+  --bg: #f8fafc;
+  --bg-elevated: var(--brand-white);
+  --border: #d8e0ec;
+  --border-strong: #c2cddc;
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --muted: #64748b;
+
+  /* Sémantique QHSE */
+  --green: var(--qhse-env-dark);
+  --red: #ef4444;
+  --orange: var(--qhse-sst);
+  --yellow: #eab308;
+  --white: var(--brand-white);
+
+  /* Layout */
+  --sw: 252px;
+  --sw-collapsed: 68px;
+  --sw-expanded: 228px;
+  --sidebar-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --sidebar-duration: 0.24s;
+  --topbar-h: 64px;
+  --icon-nav-h: auto;
+
+  /* Identité UI — bleu/blanc (primaire plateforme) */
+  --color-primary: #0284c7;
+  --color-primary-dark: #0369a1;
+  --color-primary-light: #38bdf8;
+  --color-primary-soft: #f0f9ff;
+  --color-primary-ring: rgba(2, 132, 199, 0.12);
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+
+  /* Typographie — échelle unifiée */
+  --font: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', var(--font);
+  --fs-base: 14px;
+  --fs-sm: 12px;
+  --fs-xs: 10px;
+  --fs-lg: 16px;
+  --fs-xl: 18px;
+  --fs-2xl: 22px;
+  --lh: 1.5;
+  --lh-tight: 1.35;
+
+  /* Espacements */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  /* Icônes */
+  --icon-xs: 12px;
+  --icon-sm: 14px;
+  --icon-md: 18px;
+  --icon-lg: 22px;
+  --icon-tile-nav: 36px;
+  --icon-tile-sidebar: 30px;
+  --icon-brand: 38px;
+  --tile-color: var(--qhse-quality);
+
+  /* Espacements */
+  --space-content-x: 20px;
+  --space-content-y: 16px;
+  --card-pad: 16px 18px;
+  --btn-pad: 8px 16px;
+  --gap-grid: 14px;
+
+  /* Rayons & ombres */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 13px;
+  --radius-xl: 17px;
+  --shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  --shadow-sm: var(--shadow);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.14);
+  --transition: 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --app-bg-dark: linear-gradient(180deg, #0a1020 0%, #0f172a 38%, #1e293b 100%);
+  --icon-stroke-width: 2;
+}

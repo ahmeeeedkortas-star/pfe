@@ -1,0 +1,90 @@
+/**
+ * Mode sombre global — activé via html[data-theme="dark"] (Paramètres).
+ */
+html[data-theme='dark'] {
+  --bg: #0a1020;
+  --white: #152238;
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: #94a3b8;
+  --navy: #e2e8f0;
+  color-scheme: dark;
+}
+
+html[data-theme='dark'] body,
+html[data-theme='dark'] #app-shell {
+  background: var(--bg);
+  color: var(--navy);
+}
+
+html[data-theme='dark'] .topbar {
+  background: rgba(11, 18, 32, 0.92);
+  border-bottom-color: var(--border);
+  backdrop-filter: blur(12px);
+}
+
+html[data-theme='dark'] .sidebar {
+  background: linear-gradient(180deg, #121c32 0%, #0c1222 50%, #0a1020 100%);
+  border-right-color: var(--border);
+}
+
+html[data-theme='dark'] .s-item {
+  color: #cbd5e1;
+}
+
+html[data-theme='dark'] .s-item:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+html[data-theme='dark'] .s-item.active {
+  background: var(--brand-red-muted);
+  color: #fff;
+  box-shadow: none;
+}
+
+html[data-theme='dark'] .main {
+  background: var(--bg);
+}
+
+html[data-theme='dark'] .mod-topbar {
+  background: var(--white);
+  border-color: var(--border);
+}
+
+html[data-theme='dark'] .card {
+  background: var(--white);
+  border-color: var(--border);
+  color: var(--navy);
+}
+
+html[data-theme='dark'] .t-search {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border);
+}
+
+html[data-theme='dark'] .t-search input {
+  color: #e2e8f0;
+}
+
+html[data-theme='dark'] .search-panel {
+  background: #1a2336;
+  border-color: var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme='dark'] .sr-item {
+  color: #e2e8f0;
+}
+
+html[data-theme='dark'] .sr-item:hover,
+html[data-theme='dark'] .sr-item.is-active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme='dark'] .sr-item__label {
+  color: #f1f5f9;
+}
+
+html[data-theme='light'] .search-panel {
+  background: var(--white);
+}

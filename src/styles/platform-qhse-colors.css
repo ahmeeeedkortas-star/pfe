@@ -1,0 +1,37 @@
+/**
+ * Palette QHSE globale
+ */
+
+.topbar::after {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary, var(--qhse-quality)) 0%,
+    var(--color-primary-light, #38bdf8) 50%,
+    transparent 100%
+  ) !important;
+  opacity: 0.65;
+}
+
+.t-search:focus-within {
+  border-color: color-mix(in srgb, var(--qhse-quality) 55%, var(--border)) !important;
+  box-shadow: 0 0 0 2px var(--qhse-quality-soft) !important;
+}
+
+.t-avatar {
+  background: linear-gradient(135deg, var(--qhse-quality-dark), var(--qhse-quality)) !important;
+}
+
+.t-badge {
+  background: var(--qhse-sst) !important;
+}
+
+.btn.bp,
+.btn-primary {
+  background: linear-gradient(135deg, var(--qhse-quality-dark), var(--qhse-quality)) !important;
+  border-color: var(--qhse-quality-dark) !important;
+}
+
+.btn.bp:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 4px 14px var(--qhse-quality-glow);
+}

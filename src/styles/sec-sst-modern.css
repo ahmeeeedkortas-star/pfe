@@ -1,0 +1,690 @@
+/**
+ * Sécurité — Risques SST & Accidents (design moderne Odoo-like)
+ */
+.content.sst-mode {
+  padding: 0 !important;
+  background: #f1f5f9;
+}
+
+.sec-sst-modern.xm-register {
+  --sst-radius: 12px;
+  --sst-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --sst-shadow-hover: 0 8px 24px rgba(15, 23, 42, 0.1);
+  font-family: Inter, 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.sec-sst-modern .sst-layout,
+.sec-sst-modern .acc-layout {
+  display: flex;
+  height: calc(100vh - 168px);
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.sec-sst-modern .sst-left {
+  width: 42%;
+  min-width: 360px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.sec-sst-modern .acc-left {
+  width: 44%;
+  min-width: 380px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.sec-sst-modern .sst-right,
+.sec-sst-modern .acc-right {
+  flex: 1;
+  overflow-y: auto;
+  background: #fff;
+  animation: sstPanelIn 0.35s ease;
+}
+
+@keyframes sstPanelIn {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hero */
+.sst-hero,
+.acc-hero {
+  background: linear-gradient(135deg, #0f2044 0%, #1e40af 100%);
+  color: #fff;
+  padding: 16px 20px;
+  flex-shrink: 0;
+}
+
+.acc-hero {
+  background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #38bdf8 100%);
+}
+
+.sst-hero-inner,
+.acc-hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sst-hero h2,
+.acc-hero h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sst-hero p,
+.acc-hero p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.sst-hero-actions,
+.acc-hero-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sst-hero-actions .btn,
+.acc-hero-actions .btn {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.sst-hero-actions .btn.bp,
+.acc-hero-actions .btn.bp {
+  background: #fff;
+  color: #1e40af;
+  border-color: #fff;
+}
+
+.acc-hero-actions .btn.bp {
+  color: #991b1b;
+}
+
+/* KPI strip */
+.sst-kpi-strip,
+.acc-kpi-strip {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  flex-shrink: 0;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sst-kpi-pill,
+.acc-kpi-pill {
+  flex: 1;
+  min-width: 88px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.sst-kpi-pill:hover,
+.acc-kpi-pill:hover {
+  transform: translateY(-1px);
+}
+
+.sst-kpi-pill-val,
+.acc-kpi-pill-val {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: ui-monospace, monospace;
+  line-height: 1.1;
+}
+
+.sst-kpi-pill-lbl,
+.acc-kpi-pill-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+/* Filters */
+.sst-filters-modern,
+.acc-filters-modern {
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sst-filters-modern .fi,
+.sst-filters-modern .sel,
+.acc-filters-modern .fi,
+.acc-filters-modern .sel {
+  font-size: 12px;
+  border-radius: 8px;
+  min-height: 34px;
+}
+
+.sst-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.sst-list-scroll,
+.acc-list-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 14px;
+}
+
+/* Risk cards */
+.sst-risk-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sst-risk-card {
+  display: flex;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--sst-radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  animation: sstCardIn 0.4s ease both;
+}
+
+@keyframes sstCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sst-risk-card:hover {
+  box-shadow: var(--sst-shadow-hover);
+  border-color: #cbd5e1;
+}
+
+.sst-risk-card.is-selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #93c5fd, var(--sst-shadow-hover);
+}
+
+.sst-risk-card-stripe {
+  width: 5px;
+  flex-shrink: 0;
+}
+
+.sst-risk-card-body {
+  flex: 1;
+  padding: 12px 14px;
+  min-width: 0;
+}
+
+.sst-risk-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.sst-risk-id {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  font-family: ui-monospace, monospace;
+}
+
+.sst-risk-niv {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sst-risk-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.sst-risk-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.sst-risk-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.sst-risk-sub {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.sst-risk-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 10px;
+  color: #64748b;
+}
+
+.sst-gfdc {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.sst-gfdc span {
+  font-weight: 800;
+  font-family: ui-monospace, monospace;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+.sst-gfdc span:nth-child(1) {
+  background: #fef2f2;
+  color: #dc2626;
+}
+.sst-gfdc span:nth-child(2) {
+  background: #fff7ed;
+  color: #ea580c;
+}
+.sst-gfdc span:nth-child(3) {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.sst-crit-badge {
+  font-weight: 800;
+  font-family: ui-monospace, monospace;
+  color: #0f172a;
+}
+
+/* Heatmap accordion */
+.sst-heatmap-panel {
+  margin-top: 14px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--sst-radius);
+  overflow: hidden;
+}
+
+.sst-heatmap-toggle {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  background: #f8fafc;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sst-heatmap-body {
+  padding: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Accident timeline */
+.acc-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.acc-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, #dc2626, #f59e0b, #e2e8f0);
+}
+
+.acc-timeline-item {
+  position: relative;
+  margin-bottom: 12px;
+  animation: sstCardIn 0.4s ease both;
+}
+
+.acc-timeline-dot {
+  position: absolute;
+  left: -20px;
+  top: 14px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px currentColor;
+  z-index: 1;
+}
+
+.acc-incident-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--sst-radius);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.acc-incident-card:hover {
+  box-shadow: var(--sst-shadow-hover);
+}
+
+.acc-incident-card.is-selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #93c5fd;
+}
+
+.acc-incident-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.acc-incident-id {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: ui-monospace, monospace;
+  color: #64748b;
+}
+
+.acc-grav-badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.acc-incident-emp {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.acc-incident-meta {
+  font-size: 11px;
+  color: #64748b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.acc-incident-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Detail panel enhancements */
+.sec-sst-modern .reg-panel-head {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(180deg, #f8fafc, #fff);
+}
+
+.sec-sst-modern .reg-step-bar {
+  padding: 16px 20px 8px;
+  background: #fafbfc;
+}
+
+.sec-sst-modern .reg-tabs {
+  padding: 0 20px;
+  gap: 4px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sec-sst-modern .reg-tab {
+  padding: 10px 16px;
+  font-size: 12px;
+  border-radius: 8px 8px 0 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sec-sst-modern .reg-tab.active {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.sec-sst-modern .reg-panel-body {
+  padding: 18px 20px 24px;
+}
+
+.sec-sst-modern .reg-score-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.sec-sst-modern .reg-score-box {
+  border-radius: 10px;
+  padding: 14px 10px;
+  transition: transform 0.2s;
+}
+
+.sec-sst-modern .reg-score-box:hover {
+  transform: scale(1.02);
+}
+
+/* Timeline workflow (accidents detail) */
+.acc-wf-timeline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+
+.acc-wf-step {
+  flex: 1;
+  min-width: 72px;
+  text-align: center;
+  position: relative;
+}
+
+.acc-wf-step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin: 0 auto 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  border: 2px solid #e2e8f0;
+  background: #fff;
+  color: #94a3b8;
+  transition: all 0.25s ease;
+}
+
+.acc-wf-step.is-done .acc-wf-step-dot {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #fff;
+}
+
+.acc-wf-step.is-active .acc-wf-step-dot {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.acc-wf-step-lbl {
+  font-size: 9px;
+  font-weight: 600;
+  color: #64748b;
+  line-height: 1.2;
+}
+
+.acc-wf-step.is-active .acc-wf-step-lbl {
+  color: #2563eb;
+}
+
+.acc-section-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.acc-section-card h4 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pourquoi-block {
+  border-left: 3px solid #2563eb;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 0 8px 8px 0;
+}
+
+.pourquoi-block.last {
+  border-left-color: #dc2626;
+  background: #fef2f2;
+}
+
+.sec-sst-modern .pourquoi-block {
+  animation: sstCardIn 0.35s ease both;
+}
+
+.acc-action-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-left: 4px solid #2563eb;
+  transition: box-shadow 0.2s;
+}
+
+.acc-action-card:hover {
+  box-shadow: var(--sst-shadow);
+}
+
+.acc-file-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: background 0.15s;
+}
+
+.acc-file-card:hover {
+  background: #f8fafc;
+}
+
+.sst-empty-state,
+.acc-empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: #64748b;
+}
+
+.sst-empty-state .xm-icon,
+.acc-empty-state .xm-icon {
+  margin: 0 auto 12px;
+  opacity: 0.5;
+}
+
+@media (max-width: 1100px) {
+  .sec-sst-modern .sst-layout,
+  .sec-sst-modern .acc-layout {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+
+  .sec-sst-modern .sst-left,
+  .sec-sst-modern .acc-left {
+    width: 100%;
+    min-width: 0;
+    max-height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+}

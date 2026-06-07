@@ -1,0 +1,200 @@
+/**
+ * Panneau de contrôle & listes — inspiration Odoo (plateforme QHSE)
+ */
+
+.odoo-cp-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.odoo-cp-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text, #0f172a);
+  margin: 0;
+}
+
+.odoo-cp-sub {
+  font-size: 11px;
+  color: var(--muted, #64748b);
+  margin: 2px 0 0;
+}
+
+.odoo-cp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.odoo-search {
+  display: flex;
+  flex: 1;
+  min-width: 180px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 8px;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 6px;
+  background: #f8fafc;
+}
+
+.odoo-search:focus-within {
+  border-color: var(--blue, #185fa5);
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--blue, #185fa5);
+}
+
+.odoo-search-input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 7px 0;
+  font-size: 12px;
+  outline: none;
+}
+
+.odoo-cp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text, #334155);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.odoo-cp-btn:hover {
+  background: #f1f5f9;
+}
+
+.odoo-cp-dropdown {
+  position: relative;
+}
+
+.odoo-dd-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 200;
+  min-width: 200px;
+  max-height: 320px;
+  overflow: auto;
+  margin-top: 4px;
+  padding: 6px;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.odoo-dd-menu-wide {
+  min-width: 280px;
+}
+
+.odoo-dd-heading {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 4px 8px 8px;
+  margin: 0;
+}
+
+.odoo-dd-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.odoo-dd-item:hover {
+  background: #f1f5f9;
+}
+
+.odoo-dd-item-active {
+  background: #eff6ff;
+  color: var(--blue, #185fa5);
+  font-weight: 600;
+}
+
+.odoo-dd-desc {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.odoo-cp-count {
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.odoo-cp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+}
+
+.odoo-chip-meta {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  margin-right: 4px;
+}
+
+.odoo-chip {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: var(--blue, #185fa5);
+  border: 1px solid #bfdbfe;
+}
+
+.odoo-group-row td {
+  background: #f1f5f9 !important;
+  font-size: 11px;
+  padding: 8px 12px !important;
+  color: var(--navy, #1e3a5f);
+}
+
+.odoo-group-count {
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 6px;
+}
+
+.odoo-dd-filters-grid {
+  display: grid;
+  gap: 8px;
+  padding: 4px 8px 8px;
+}
+
+.odoo-dd-filters-grid .sel {
+  width: 100%;
+  font-size: 11px;
+}
+
+.odoo-cp + .card {
+  border-radius: 0 0 12px 12px;
+  border-top: 0;
+}

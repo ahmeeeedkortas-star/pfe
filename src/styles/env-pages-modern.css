@@ -1,0 +1,363 @@
+/**
+ * Module Environnement — UI moderne
+ */
+
+.content.env-mode {
+  background: #f1f5f9;
+}
+
+.env-page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 4px 28px;
+  animation: envPageIn 0.35s ease;
+}
+
+@keyframes envPageIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.env-module-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 0 16px;
+  margin-bottom: 4px;
+}
+
+.env-nav-card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  min-width: 88px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.env-nav-card:hover {
+  border-color: #86efac;
+  box-shadow: 0 4px 12px rgba(22, 101, 52, 0.08);
+}
+
+.env-nav-card.is-active {
+  border-color: #16a34a;
+  background: linear-gradient(180deg, #f0fdf4, #fff);
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.15);
+}
+
+.env-nav-icon {
+  color: #64748b;
+}
+
+.env-nav-card.is-active .env-nav-icon {
+  color: #16a34a;
+}
+
+.env-nav-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.env-nav-card.is-active .env-nav-label {
+  color: #166534;
+}
+
+.env-page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.env-page-head h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.env-page-head p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.env-module-nav + .env-page-head {
+  margin-top: 4px;
+}
+
+.env-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.env-kpi-pill {
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.env-kpi-val {
+  font-size: 26px;
+  font-weight: 800;
+  font-family: ui-monospace, monospace;
+  line-height: 1.1;
+}
+
+.env-kpi-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.env-filter-bar {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.env-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.env-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.env-card-head h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.env-tbl-wrap {
+  overflow-x: auto;
+}
+
+.env-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.env-tbl th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.env-tbl td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.env-tbl tr:hover td {
+  background: #f8fafc;
+}
+
+.env-id {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0284c7;
+}
+
+.env-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+}
+
+.env-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.env-progress-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.3s;
+}
+
+.env-progress-pct {
+  font-size: 11px;
+  font-weight: 800;
+  font-family: ui-monospace, monospace;
+  min-width: 36px;
+}
+
+.env-conso-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1000px) {
+  .env-conso-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.env-conso-card {
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.env-conso-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: currentColor;
+}
+
+.env-chart-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .env-chart-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.env-incident-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 14px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .env-incident-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.env-incident-row.is-selected td {
+  background: #eff6ff !important;
+}
+
+.env-detail-panel {
+  position: sticky;
+  top: 12px;
+}
+
+.env-section-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.env-section-block h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#main {
+  transition: opacity 0.22s ease;
+}
+
+#main.is-module-switching {
+  opacity: 0.88;
+}
+
+
+.env-kpi-pill {
+  position: relative;
+}
+
+.env-kpi-pill-ic {
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+/* Incidents env. — thème vert (registre type accidents) */
+.env-inc-register .env-inc-hero {
+  background: linear-gradient(135deg, #14532d 0%, #166534 45%, #15803d 100%);
+}
+
+.env-inc-register .acc-wf-step.is-active .acc-wf-step-dot,
+.env-inc-register .reg-step-dot[data-env-new-step] {
+  border-color: #16a34a;
+}
+
+.env-inc-register .reg-tab.active {
+  color: #166534;
+  border-bottom-color: #16a34a;
+}
+
+.env-inc-register .acc-layout {
+  min-height: calc(100vh - 200px);
+}

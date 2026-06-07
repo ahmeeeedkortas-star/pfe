@@ -1,0 +1,180 @@
+/* Filtre période — Actions RC / NC */
+.period-date-picker {
+  grid-column: 1 / -1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fafbfc 0%, #f0f6fc 100%);
+  border: 1px solid #c7daf0;
+  margin-bottom: 4px;
+}
+
+.period-date-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.period-date-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #dbeafe;
+  color: #185fa5;
+  flex-shrink: 0;
+}
+
+.period-date-titles {
+  flex: 1;
+  min-width: 0;
+}
+
+.period-date-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.period-date-summary {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.period-clear-btn {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.period-clear-btn:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.period-date-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.period-level-tabs {
+  display: inline-flex;
+  padding: 3px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  gap: 2px;
+}
+
+.period-level-tab {
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.period-level-tab:hover {
+  color: var(--navy);
+  background: #f1f5f9;
+}
+
+.period-level-tab.active {
+  background: #185fa5;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(24, 95, 165, 0.35);
+}
+
+.period-picker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 200px;
+}
+
+.period-picker-input {
+  flex: 1;
+  min-width: 160px;
+  max-width: 220px;
+}
+
+.period-picker-input[hidden] {
+  display: none !important;
+}
+
+.period-native.fi,
+.period-native.sel {
+  width: 100%;
+  min-height: 34px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+}
+
+.period-native.fi:focus,
+.period-native.sel:focus {
+  outline: none;
+  border-color: #185fa5;
+  box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.15);
+}
+
+.period-field-sel {
+  min-width: 110px;
+  font-size: 11px;
+}
+
+.rc-act-toolbar .period-date-picker,
+.nc-act-toolbar .period-date-picker {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .period-date-body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .period-level-tabs {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .period-level-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 6px;
+  }
+
+  .period-picker-input {
+    max-width: none;
+  }
+}

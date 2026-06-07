@@ -1,0 +1,101 @@
+/**
+ * Modules — cartes claires, accent par module
+ */
+
+/* Accents modules — nuances de bleu (charte unifiée bleu/blanc) */
+#main {
+  --module-accent: #0284c7;
+  --module-accent-soft: #f0f9ff;
+}
+
+#main[data-module='rc'],
+#main[data-module='audit'],
+#main[data-module='doc'] {
+  --module-accent: #0284c7;
+  --module-accent-soft: #f0f9ff;
+}
+
+#main[data-module='nc'] {
+  --module-accent: #0369a1;
+  --module-accent-soft: #e0f2fe;
+}
+
+#main[data-module='cst'],
+#main[data-module='env'] {
+  --module-accent: #0ea5e9;
+  --module-accent-soft: #f0f9ff;
+}
+
+#main[data-module='sec'],
+#main[data-module='fives'] {
+  --module-accent: #38bdf8;
+  --module-accent-soft: #f0f9ff;
+}
+
+.mod-topbar {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 4px solid var(--module-accent) !important;
+  border-radius: 10px !important;
+  margin: 12px 14px 0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) !important;
+}
+
+.mod-title,
+.mod-title .xm-page-title {
+  color: #0f172a !important;
+}
+
+.mod-sub {
+  color: #64748b !important;
+}
+
+.icon-nav {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  margin: 8px 14px !important;
+  padding: 6px 8px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+}
+
+#main .ini.active {
+  background: var(--module-accent-soft) !important;
+  border-color: color-mix(in srgb, var(--module-accent) 22%, #e2e8f0) !important;
+  box-shadow: none !important;
+}
+
+#main .ini.active .ini-lb {
+  color: var(--module-accent) !important;
+  font-weight: 700;
+}
+
+#main .ini.active .xm-icon-tile,
+#main .xm-icon-tile.is-active {
+  transform: scale(1.04);
+  background: var(--module-accent-soft) !important;
+  color: var(--module-accent) !important;
+  border-color: color-mix(in srgb, var(--module-accent) 28%, transparent) !important;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--module-accent) 16%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+#main #content:not(.home-mode) .card,
+#main #content:not(.home-mode) .odoo-panel,
+#main #content:not(.home-mode) .kc,
+#main #content:not(.home-mode) .xm-register {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) !important;
+}
+
+#main #content:not(.home-mode) .btn.bp {
+  background: linear-gradient(135deg, var(--module-accent), var(--color-primary-dark, #0369a1)) !important;
+  border-color: transparent !important;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--module-accent) 35%, transparent) !important;
+}
+
+.content-inner {
+  padding: 0 14px 16px;
+}

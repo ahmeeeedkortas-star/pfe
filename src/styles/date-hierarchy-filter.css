@@ -1,0 +1,150 @@
+/* Filtre hiérarchique — Date de création */
+.date-hier-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.date-hier-level-wrap {
+  position: relative;
+}
+
+.date-hier-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-family: inherit;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  cursor: pointer;
+  color: var(--navy);
+  min-width: 168px;
+}
+
+.date-hier-trigger:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.date-hier-trigger-title {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.date-hier-trigger-level {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.date-hier-caret {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.date-hier-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 50;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  padding: 6px 0;
+}
+
+.date-hier-menu[hidden] {
+  display: none !important;
+}
+
+.date-hier-menu-head {
+  padding: 8px 14px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.date-hier-level-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  font-size: 11px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.date-hier-level-opt:hover {
+  background: #f1f5f9;
+}
+
+.date-hier-level-opt.active {
+  background: #eff6ff;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.date-hier-check {
+  width: 14px;
+  font-size: 11px;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.date-hier-value {
+  min-width: 140px;
+  max-width: 200px;
+}
+
+.rc-liste-filters {
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+
+.rc-liste-filters-row {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.rc-liste-search {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 4px 9px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.rc-liste-search input {
+  border: none;
+  background: transparent;
+  font-size: 11px;
+  color: var(--text);
+  outline: none;
+  width: 100%;
+  font-family: var(--font);
+}
+
+.rc-liste-count {
+  font-size: 10px;
+  color: var(--muted);
+  margin-left: 4px;
+}

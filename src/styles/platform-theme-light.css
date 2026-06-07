@@ -1,0 +1,39 @@
+/**
+ * Coque claire — topbar sur modules
+ */
+.topbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06) !important;
+}
+
+.t-logo-name {
+  color: #0f172a !important;
+}
+
+.t-logo-tag {
+  color: #64748b !important;
+}
+
+.t-title {
+  color: #1e293b !important;
+}
+
+.t-search {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.content.home-mode {
+  background: transparent !important;
+}
+
+#app-shell:has(.content.home-mode) .t-title {
+  display: none !important;
+}
+
+#app-shell:has(.content.home-mode) .search-wrap {
+  flex: 1;
+  max-width: 480px;
+  margin: 0 auto;
+}

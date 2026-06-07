@@ -1,0 +1,119 @@
+.rc-new-page {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.rc-new-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.rc-new-head {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  padding: 16px 20px;
+  color: #fff;
+}
+
+.rc-new-title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.rc-new-sub {
+  margin: 0;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.rc-new-form {
+  padding: 18px 20px;
+}
+
+.rc-new-grid {
+  gap: 14px;
+}
+
+.rc-new-projet {
+  grid-column: 1 / -1;
+}
+
+.rc-new-client-add,
+.rc-new-projet .rc-new-client-add {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.rc-new-client-add .fi {
+  flex: 1;
+}
+
+.rc-new-upload {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.rc-new-file-input {
+  font-size: 11px;
+  width: 100%;
+}
+
+.rc-new-file-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.rc-new-file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.rc-new-hint {
+  margin: 6px 0 0;
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.rc-new-delai-custom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.rc-new-delai-custom[hidden] {
+  display: none !important;
+}
+
+.rc-new-delai-custom .fi {
+  max-width: 100px;
+}
+
+.rc-new-delai-unit {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.rc-new-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.fl .req {
+  color: #dc2626;
+}

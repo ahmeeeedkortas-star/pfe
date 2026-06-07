@@ -1,0 +1,462 @@
+/**
+ * Accueil — thème clair professionnel
+ */
+.content.home-mode .home-wrap.home-wrap--layout-xm {
+  background: transparent !important;
+  min-height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+}
+
+.home-wrap--layout-xm {
+  position: relative;
+  flex: 1;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.hm-page {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* ── Hero ── */
+.hm-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 20px;
+  border-radius: 16px;
+}
+
+.hm-hero__welcome {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+
+.hm-hero__title {
+  margin: 6px 0 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+}
+
+.hm-hero__title-accent {
+  color: var(--qhse-quality);
+  font-weight: 800;
+}
+
+.hm-hero__pillars {
+  margin: 10px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.hm-hero__desc {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #64748b;
+  max-width: 480px;
+  line-height: 1.45;
+}
+
+/* ISO verticales lumineuses */
+.hm-iso-stack {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.hm-iso-v {
+  position: relative;
+  width: 92px;
+  min-height: 124px;
+  padding: 16px 10px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hm-iso-v__glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--iso) 18%, transparent) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.hm-iso-v__icon {
+  position: relative;
+  z-index: 1;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.hm-iso-v__code {
+  position: relative;
+  z-index: 1;
+  font-size: 10px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+.hm-iso-v__lbl {
+  position: relative;
+  z-index: 1;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--iso);
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* ── KPI verre blanc ── */
+.hm-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hm-kpi {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+.hm-kpi__lbl {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.hm-kpi__val {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-top: 2px;
+  font-family: var(--font-display, sans-serif);
+}
+
+.hm-kpi__hint {
+  display: block;
+  font-size: 9px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.hm-kpi__ic-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Corps ── */
+.hm-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 16px;
+  align-items: start;
+}
+
+.hm-section-title {
+  margin: 0 0 12px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.hm-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.hm-mod:nth-child(7) {
+  grid-column: 2;
+}
+
+.hm-mod:nth-child(8) {
+  grid-column: 5;
+}
+
+.hm-mod {
+  cursor: pointer;
+  animation: homeFadeUp 0.45s ease both;
+}
+
+.hm-mod__card {
+  position: relative;
+  min-height: 122px;
+  border-radius: 14px;
+  padding: 14px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  border-top: 4px solid var(--mod-accent, var(--qhse-quality));
+  box-shadow: 0 6px 20px var(--mod-glow, rgba(30, 64, 175, 0.12));
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hm-mod:hover .hm-mod__card {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px var(--mod-glow, rgba(30, 64, 175, 0.18));
+}
+
+.hm-mod__badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--mod-accent, #2563eb);
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hm-mod__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--mod-accent, #2563eb) 12%, #f8fafc);
+  color: var(--mod-accent, #2563eb);
+}
+
+.hm-mod__title {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.hm-mod__tags {
+  margin: 4px 0 0;
+  font-size: 9px;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── Rail droite ── */
+.hm-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hm-widget {
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.hm-widget__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.hm-widget__title {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #475569;
+}
+
+.hm-widget__select {
+  font-size: 9px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  cursor: pointer;
+}
+
+.hm-linechart {
+  width: 100%;
+  height: 86px;
+  display: block;
+}
+
+.hm-linechart__months {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 8px;
+  color: #94a3b8;
+}
+
+.hm-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 8px;
+  font-size: 9px;
+  color: #64748b;
+}
+
+.hm-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hm-chart-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  font-style: normal;
+  display: inline-block;
+}
+
+.hm-proc {
+  margin-bottom: 9px;
+}
+
+.hm-proc__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.hm-proc__track {
+  height: 6px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.hm-proc__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--qhse-quality), #60a5fa);
+}
+
+/* ── Barre pied de page ── */
+.hm-footer-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--xm-footer-bar-bg) !important;
+  border-color: rgba(186, 230, 253, 0.9) !important;
+}
+
+.hm-footer-bar__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.hm-footer-bar__ic {
+  flex-shrink: 0;
+  display: flex;
+  margin-top: 2px;
+}
+
+.hm-footer-bar strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.hm-footer-bar span {
+  display: block;
+  font-size: 9px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+@media (max-width: 1200px) {
+  .hm-body {
+    grid-template-columns: 1fr;
+  }
+  .hm-rail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .hm-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hm-modules-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hm-mod:nth-child(n) {
+    grid-column: auto;
+  }
+  .hm-footer-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hm-iso-stack {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .hm-hero {
+    flex-direction: column;
+  }
+  .hm-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hm-rail {
+    grid-template-columns: 1fr;
+  }
+}

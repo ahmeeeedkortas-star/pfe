@@ -1,0 +1,421 @@
+/**
+ * Registres SST (risques) et accidents — interface agrandie, plein écran.
+ */
+.content.sst-mode {
+  padding: 0 !important;
+}
+
+.xm-register {
+  --reg-fs: 15px;
+  --reg-fs-sm: 14px;
+  --reg-fs-xs: 12px;
+  --reg-fs-title: 17px;
+  --reg-fs-kpi: 22px;
+  --reg-pad: 14px 18px;
+  --reg-layout-h: calc(100vh - 172px);
+  font-size: var(--reg-fs);
+  line-height: 1.5;
+}
+
+.xm-register .sst-layout,
+.xm-register .acc-layout {
+  display: flex;
+  height: var(--reg-layout-h);
+  overflow: hidden;
+  margin: 0;
+}
+
+.xm-register .sst-left,
+.xm-register .acc-left {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+}
+
+.xm-register .sst-left {
+  width: 56%;
+}
+
+.xm-register .acc-left {
+  width: 58%;
+}
+
+.xm-register .sst-right,
+.xm-register .acc-right {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--white);
+}
+
+.xm-register .sst-filter-bar,
+.xm-register .acc-filter {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 12px var(--reg-pad);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.xm-register .sst-table-area,
+.xm-register .acc-table-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--reg-pad);
+}
+
+.xm-register .reg-title {
+  font-size: var(--reg-fs-title);
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.xm-register .reg-meta {
+  font-size: var(--reg-fs-sm);
+  color: var(--muted);
+}
+
+.xm-register .tbl {
+  font-size: var(--reg-fs-sm);
+}
+
+.xm-register .tbl th {
+  font-size: var(--reg-fs-xs);
+  padding: 12px 14px;
+  letter-spacing: 0.05em;
+}
+
+.xm-register .tbl td {
+  padding: 13px 14px;
+  font-size: var(--reg-fs-sm);
+}
+
+.xm-register .tbl .reg-id {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-weight: 700;
+  color: var(--blue);
+  font-size: var(--reg-fs-sm);
+}
+
+.xm-register .gfdc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 24px;
+  border-radius: 5px;
+  font-size: var(--reg-fs-sm);
+  font-weight: 800;
+  font-family: var(--font-mono, ui-monospace, monospace);
+}
+
+.xm-register .gfdc-g {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.xm-register .gfdc-f {
+  background: #fff7ed;
+  color: #92400e;
+}
+
+.xm-register .gfdc-d {
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+.xm-register .niv-pill {
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: var(--reg-fs-xs);
+  font-weight: 700;
+}
+
+.xm-register .sel,
+.xm-register .fi {
+  font-size: var(--reg-fs-sm);
+  padding: 10px 12px;
+}
+
+.xm-register .reg-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.xm-register .reg-kpi {
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.xm-register .reg-kpi-val {
+  font-size: var(--reg-fs-kpi);
+  font-weight: 800;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  margin: 6px 0 4px;
+}
+
+.xm-register .reg-kpi-lbl {
+  font-size: var(--reg-fs-xs);
+  color: var(--muted);
+}
+
+.xm-register .reg-panel-head {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 10;
+}
+
+.xm-register .reg-panel-title {
+  font-size: var(--reg-fs-title);
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.xm-register .reg-step-bar {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
+}
+
+.xm-register .reg-step-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--reg-fs-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.xm-register .reg-step-lbl {
+  font-size: var(--reg-fs-xs);
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+.xm-register .reg-panel-body {
+  padding: 16px 18px;
+}
+
+.xm-register .reg-sec-title {
+  font-size: var(--reg-fs-xs);
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  margin: 14px 0 10px;
+}
+
+.xm-register .reg-score-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.xm-register .reg-score-box {
+  border-radius: 9px;
+  padding: 12px;
+  text-align: center;
+}
+
+.xm-register .reg-score-val {
+  font-size: 26px;
+  font-weight: 800;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  line-height: 1;
+}
+
+.xm-register .heatmap-cell {
+  border-radius: 5px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s;
+}
+
+.xm-register .heatmap-cell:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.xm-register .reg-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  padding: 0 18px;
+  background: var(--white);
+}
+
+.xm-register .reg-tab {
+  padding: 10px 14px;
+  font-size: var(--reg-fs-sm);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: var(--muted);
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.xm-register .reg-tab.active {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+  font-weight: 600;
+}
+
+.xm-register .pourquoi-block {
+  padding: 10px 12px 10px 14px;
+  border-left: 3px solid #bfdbfe;
+  background: #f8fafc;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 8px;
+  font-size: var(--reg-fs-sm);
+}
+
+.xm-register .pourquoi-block.last {
+  border-left-color: #fecaca;
+  background: #fef9f9;
+}
+
+.xm-register .reg-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 280px;
+  gap: 12px;
+  color: var(--muted);
+  text-align: center;
+  padding: 36px;
+}
+
+.xm-register .reg-empty-icon {
+  font-size: 48px;
+}
+
+.xm-register input[type='range'].sst-slider {
+  -webkit-appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.xm-register input[type='range'].sst-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--blue);
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.xm-register .acc-action-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.xm-register .tbl tr.reg-row-sel td,
+.xm-register .tbl tr[style*='eff6ff'] td {
+  background: #eff6ff;
+}
+
+/* ── Module Environnement (aspects) — accent vert ── */
+.xm-register--env .env-reg-id,
+.xm-register--env .reg-id.env-reg-id {
+  color: #16a34a;
+}
+
+.xm-register--env .tbl tr.asp-sel td,
+.xm-register--env .tbl tr.reg-row-sel.asp-sel td {
+  background: #f0fdf4;
+}
+
+.xm-register--env .env-btn-primary.bp,
+.xm-register--env .btn.bp.env-btn-primary {
+  background: linear-gradient(135deg, #064e3b, #16a34a);
+  border-color: #15803d;
+  color: #fff;
+}
+
+.xm-register--env .env-btn-primary.bp:hover,
+.xm-register--env .btn.bp.env-btn-primary:hover {
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+}
+
+.xm-register--env .asp-layout,
+.xm-register--env .asp-left,
+.xm-register--env .asp-right,
+.xm-register--env .asp-filter-bar,
+.xm-register--env .asp-table-area {
+  /* hérite de .sst-layout */
+}
+
+.env-kpi-row {
+  padding: 0 4px;
+}
+
+/* ── Aspects environnementaux (accent vert) ── */
+.xm-register.env-register .env-id {
+  color: #16a34a;
+}
+
+.xm-register.env-register .tbl tr.reg-row-sel td {
+  background: #ecfdf5 !important;
+}
+
+.xm-register.env-register .asp-layout,
+.xm-register.env-register .sst-layout {
+  /* hérite du layout registre */
+}
+
+.xm-toast-register {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  color: #fff;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.4s;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XPERT MECA — Plateforme QHSE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app-shell">
+    <header class="topbar" role="banner">
+      <div class="t-logo xm-brand-block" data-action="home" aria-label="XPERT MECA — Accueil">
+        <!-- Logo + texte injectés au démarrage (src/patches/brand-shell.js) -->
+      </div>
+      <h1 class="t-title" id="t-title">Tableau de bord global</h1>
+
+      <div class="search-wrap" id="search-wrap">
+        <div class="t-search" style="width:100%">
+          <span aria-hidden="true">🔍</span>
+          <input id="search-input" type="search" placeholder="Rechercher (RC, NC, module…)" autocomplete="off" aria-label="Recherche globale" aria-controls="search-panel" aria-expanded="false" />
+          <button type="button" id="search-clear" class="search-clear" hidden aria-label="Effacer">✕</button>
+        </div>
+        <div id="search-panel" class="search-panel" hidden role="listbox"></div>
+      </div>
+
+      <div class="notif-wrap" id="notif-wrap">
+        <button type="button" id="notif-btn" class="t-notif" aria-expanded="false" aria-haspopup="true">
+          🔔<span class="t-badge" id="notif-badge">3</span>
+        </button>
+        <div id="notif-panel" class="notif-panel" hidden>
+          <div class="notif-panel__head">
+            <div>
+              <strong>Notifications</strong>
+              <div class="notif-panel__sub" id="notif-unread-txt">3 non lues</div>
+            </div>
+            <div class="notif-panel__actions">
+              <button type="button" id="notif-mark-all" class="btn-link">Tout marquer lu</button>
+              <button type="button" id="notif-close" class="btn-icon" aria-label="Fermer">✕</button>
+            </div>
+          </div>
+          <div id="notif-list" class="notif-list"></div>
+          <footer class="notif-panel__foot">
+            <button type="button" id="notif-view-all" class="btn-link">Voir toutes les alertes →</button>
+          </footer>
+        </div>
+      </div>
+
+      <div class="t-user">
+        <div class="t-user-info">
+          <strong>KORTAS Ahmed</strong>
+          <span>Responsable Qualité</span>
+        </div>
+        <div class="t-avatar" aria-hidden="true">KA</div>
+      </div>
+    </header>
+
+    <div class="body">
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Navigation principale"></aside>
+      <main class="main" id="main">
+        <nav class="icon-nav" id="icon-nav" hidden aria-label="Navigation module"></nav>
+        <header class="mod-topbar" id="mod-topbar">
+          <div>
+            <div class="mod-title" id="mod-title">Tableau de bord global</div>
+            <div class="mod-sub" id="mod-sub">Vue d'ensemble — Mai 2026</div>
+          </div>
+          <div class="mod-actions" id="mod-actions"></div>
+        </header>
+        <div class="content" id="content" role="main"></div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
