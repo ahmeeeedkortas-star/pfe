@@ -1,0 +1,202 @@
+/**
+ * Boutons globaux — navy #000080 sur toute la plateforme
+ * Inchangés : .btn-danger, .bg2 (succès), badges statut (.br/.bo/.bg3/.by/.bb)
+ */
+
+/* ── Tokens boutons ── */
+:root {
+  --btn-primary-bg: linear-gradient(135deg, #000066, #000080);
+  --btn-primary-bg-hover: linear-gradient(135deg, #000050, #000066);
+  --btn-primary-shadow: 0 2px 8px rgba(0, 0, 128, 0.25);
+  --btn-primary-shadow-hover: 0 4px 14px rgba(0, 0, 128, 0.32);
+  --btn-secondary-border: #e4e8f0;
+  --btn-secondary-hover-bg: #f8f9fc;
+}
+
+/* ── Primaires ── */
+.btn.bp,
+.btn-primary,
+.bp,
+.odoo-btn-primary,
+.odoo-btn.bp,
+.doc-btn.bp,
+.v11-odoo-ux .btn-primary,
+.brand-theme .bp,
+button.btn.bp,
+input.btn.bp,
+#main #content .btn.bp,
+#main #content:not(.home-mode) .btn.bp,
+#content.xm-v11-surface .btn.bp,
+#content.xm-v11-surface .btn.bp.xm-btn,
+.sec-cl-actions .btn.bp,
+.xm-register .btn.bp:not(.env-btn-primary),
+[data-page] .btn.bp {
+  background: var(--btn-primary-bg) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  box-shadow: var(--btn-primary-shadow) !important;
+}
+
+.btn.bp:hover:not(:disabled),
+.btn-primary:hover:not(:disabled),
+.bp:hover:not(:disabled),
+.odoo-btn-primary:hover:not(:disabled),
+#main #content .btn.bp:hover:not(:disabled),
+#content.xm-v11-surface .btn.bp:hover:not(:disabled),
+[data-page] .btn.bp:hover:not(:disabled) {
+  background: var(--btn-primary-bg-hover) !important;
+  box-shadow: var(--btn-primary-shadow-hover) !important;
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+/* ── Secondaires ── */
+.btn:not(.bp):not(.btn-danger):not(.bg2):not(.bg3):not(.br):not(.bo):not(.by):not(.bb):not(.bgr),
+.odoo-cp-btn {
+  background: #ffffff !important;
+  border: 1.5px solid var(--btn-secondary-border) !important;
+  color: #1a1a2e !important;
+}
+
+.btn:not(.bp):not(.btn-danger):not(.bg2):not(.bg3):hover:not(:disabled),
+.odoo-cp-btn:hover {
+  background: var(--btn-secondary-hover-bg) !important;
+  border-color: color-mix(in srgb, var(--color-primary) 28%, var(--btn-secondary-border)) !important;
+  color: var(--color-primary, #000080) !important;
+}
+
+/* Hero SST / accidents — boutons sur fond sombre */
+.sst-hero-actions .btn.bp,
+.acc-hero-actions .btn.bp {
+  background: var(--btn-primary-bg) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.acc-hero-actions .btn.bp {
+  color: #fff !important;
+}
+
+.sst-hero-actions .btn:not(.bp):not(.btn-danger),
+.acc-hero-actions .btn:not(.bp):not(.btn-danger) {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+}
+
+/* Env — aligner sur navy (plus vert module) */
+.xm-register--env .env-btn-primary.bp,
+.xm-register--env .btn.bp.env-btn-primary {
+  background: var(--btn-primary-bg) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  box-shadow: var(--btn-primary-shadow) !important;
+}
+
+.xm-register--env .env-btn-primary.bp:hover,
+.xm-register--env .btn.bp.env-btn-primary:hover {
+  box-shadow: var(--btn-primary-shadow-hover) !important;
+}
+
+/* Toggles & onglets actifs (UI, pas statut) */
+.rc-act-view-btn.active,
+.rc-kpi-per-btn.active,
+.period-level-tab.active,
+.nc-kpi-tab.active,
+.kpi-tab.active,
+.tab.active,
+.filter-sel.active,
+#content.xm-v11-surface .filter-sel.active {
+  background: var(--color-primary, #000080) !important;
+  color: #fff !important;
+  border-color: var(--color-primary, #000080) !important;
+}
+
+.odoo-dd-item-active {
+  background: var(--color-primary-soft, #f0f0fa) !important;
+  color: var(--color-primary, #000080) !important;
+}
+
+/* Navigation checklist SST */
+.sec-cl-nav-card.is-active {
+  border-color: var(--color-primary, #000080) !important;
+  background: var(--btn-primary-bg) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 128, 0.28) !important;
+}
+
+.sec-cl-nav-card.is-active .sec-cl-nav-icon {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #fff !important;
+}
+
+/* Workflow steps actifs */
+.acc-wf-step.is-active .acc-wf-step-dot {
+  background: var(--color-primary, #000080) !important;
+  border-color: var(--color-primary, #000080) !important;
+  box-shadow: 0 0 0 4px rgba(0, 0, 128, 0.18) !important;
+}
+
+.acc-wf-step.is-active .acc-wf-step-lbl {
+  color: var(--color-primary, #000080) !important;
+}
+
+/* Focus formulaires */
+.fi:focus,
+.sel:focus,
+.filter-sel:focus,
+.odoo-search:focus-within,
+textarea.fi:focus {
+  border-color: var(--color-primary, #000080) !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.12) !important;
+}
+
+.period-native.fi:focus,
+.period-native.sel:focus {
+  border-color: var(--color-primary, #000080) !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.12) !important;
+}
+
+/* Accents module unifiés */
+#main {
+  --module-accent: #000080;
+  --module-accent-soft: #f0f0fa;
+}
+
+.rc-actions-page,
+.rc-actions-page.nc-actions-page {
+  --rc-act: #000080;
+}
+
+.rc-act-view-btn.active {
+  background: var(--color-primary, #000080) !important;
+  color: #fff !important;
+}
+
+.rc-act-ref {
+  color: var(--color-primary, #000080) !important;
+  background: var(--color-primary-soft, #f0f0fa) !important;
+}
+
+.rc-act-col-add:hover {
+  border-color: var(--color-primary, #000080) !important;
+  color: var(--color-primary, #000080) !important;
+}
+
+.rc-act-kpi--ring {
+  color: var(--color-primary, #000080) !important;
+}
+
+/* Danger & succès — conservés */
+.btn-danger,
+.btn.btn-danger {
+  background: linear-gradient(135deg, #991b1b, #dc2626) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}
+
+.bg2 {
+  background: linear-gradient(135deg, #166534, #16a34a) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}

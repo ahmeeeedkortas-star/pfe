@@ -111,7 +111,7 @@ export function cstSwotAdd(key) {
   const body = swotForm(null, key);
   document.body.insertAdjacentHTML(
     'beforeend',
-    cstModal(`Ajouter — ${SWOT_LABELS[key]}`, 'Analyse SWOT', '#14532d', '#16a34a', body, { entity: 'swot', key })
+    cstModal(`Ajouter — ${SWOT_LABELS[key]}`, 'Analyse SWOT', '#000066', '#000080', body, { entity: 'swot', key })
   );
   bindCreatableSelect('cst_swot_proc');
   bindCreatableSelect('cst_swot_cat');
@@ -124,7 +124,7 @@ export function cstSwotEdit(key, itemId) {
   const body = swotForm(item, key);
   document.body.insertAdjacentHTML(
     'beforeend',
-    cstModal(`Modifier — ${SWOT_LABELS[key]}`, 'Analyse SWOT', '#14532d', '#16a34a', body, { entity: 'swot', key, id: itemId })
+    cstModal(`Modifier — ${SWOT_LABELS[key]}`, 'Analyse SWOT', '#000066', '#000080', body, { entity: 'swot', key, id: itemId })
   );
   bindCreatableSelect('cst_swot_proc');
   bindCreatableSelect('cst_swot_cat');
@@ -474,7 +474,7 @@ export function cstPolitiqueEdit() {
   const p = getCstPolitique();
   document.body.insertAdjacentHTML(
     'beforeend',
-    cstModal('Modifier la politique QHSE', 'Engagement de la direction', '#14532d', '#16a34a', politiqueForm(p), {
+    cstModal('Modifier la politique QHSE', 'Engagement de la direction', '#000066', '#000080', politiqueForm(p), {
       entity: 'politique',
     })
   );
@@ -540,7 +540,7 @@ function handleSave(btn) {
     recordSingletonRevision(ctx, snap, getCstCurrentUser(), 'Modification contexte organisme');
     cstAfterMutation('cst-swot', 'contexte', '—', 'Enregistrement', 'Mission, vision et périmètre', getCstCurrentUser());
     closeCstModal();
-    cstToast('Contexte enregistré', '#16a34a');
+    cstToast('Contexte enregistré', '#000080');
     cstRefresh('cst-swot');
     return;
   }
@@ -571,12 +571,12 @@ function handleSave(btn) {
         recordEntityRevision(ex, snap, getCstCurrentUser(), 'Modification SWOT');
         cstAfterMutation('cst-swot', 'swot', id, 'Modification', val.slice(0, 80), getCstCurrentUser());
       }
-      cstToast('Élément SWOT mis à jour', '#16a34a');
+      cstToast('Élément SWOT mis à jour', '#000080');
     } else {
       initNewEntity(row);
       list.push(row);
       cstAfterMutation('cst-swot', 'swot', row.id, 'Création', val.slice(0, 80), getCstCurrentUser());
-      cstToast('Élément SWOT ajouté', '#16a34a');
+      cstToast('Élément SWOT ajouté', '#000080');
     }
     closeCstModal();
     cstRefresh('cst-swot');
@@ -603,13 +603,13 @@ function handleSave(btn) {
         recordEntityRevision(p, snap, getCstCurrentUser(), 'Révision PESTEL');
         cstAfterMutation('cst-pestel', 'pestel', id, 'Modification', facteur, getCstCurrentUser());
       }
-      cstToast('PESTEL mis à jour', '#16a34a');
+      cstToast('PESTEL mis à jour', '#000080');
     } else {
       const nid = nextId('PST', D);
       const item = initNewEntity({ id: nid, ...row });
       D.push(item);
       cstAfterMutation('cst-pestel', 'pestel', nid, 'Création', facteur, getCstCurrentUser());
-      cstToast('Facteur PESTEL ajouté', '#16a34a');
+      cstToast('Facteur PESTEL ajouté', '#000080');
     }
     closeCstModal();
     cstRefresh('cst-pestel');
@@ -639,13 +639,13 @@ function handleSave(btn) {
         recordEntityRevision(p, snap, getCstCurrentUser(), 'Modification besoins/attentes');
         cstAfterMutation('cst-parties', 'partie', id, 'Modification', row.nom, getCstCurrentUser());
       }
-      cstToast('Partie mise à jour', '#16a34a');
+      cstToast('Partie mise à jour', '#000080');
     } else {
       const nid = nextId('PI', D);
       const item = initNewEntity({ id: nid, ...row });
       D.push(item);
       cstAfterMutation('cst-parties', 'partie', nid, 'Création', row.nom, getCstCurrentUser());
-      cstToast('Partie ajoutée', '#16a34a');
+      cstToast('Partie ajoutée', '#000080');
     }
     closeCstModal();
     cstRefresh('cst-parties');
@@ -689,14 +689,14 @@ function handleSave(btn) {
         recordEntityRevision(r, snap, getCstCurrentUser(), 'Révision évaluation risque');
         cstAfterMutation('cst-risques', 'risque', id, 'Modification', row.enjeux.slice(0, 80), getCstCurrentUser());
       }
-      cstToast('Élément mis à jour', '#16a34a');
+      cstToast('Élément mis à jour', '#000080');
     } else {
       const prefix = isOpp ? 'OPP' : 'RSQ';
       const nid = nextId(prefix, D.filter((x) => x.id.startsWith(prefix)));
       const item = initNewEntity({ id: nid, ...row });
       D.push(item);
       cstAfterMutation('cst-risques', 'risque', nid, 'Création', row.enjeux.slice(0, 80), getCstCurrentUser());
-      cstToast('Élément ajouté', '#16a34a');
+      cstToast('Élément ajouté', '#000080');
     }
     closeCstModal();
     cstRefresh('cst-risques');
@@ -722,13 +722,13 @@ function handleSave(btn) {
         recordEntityRevision(o, snap, getCstCurrentUser(), 'Révision objectif/indicateur');
         cstAfterMutation('cst-objectifs', 'objectif', id, 'Modification', row.objectif.slice(0, 80), getCstCurrentUser());
       }
-      cstToast('Objectif mis à jour', '#16a34a');
+      cstToast('Objectif mis à jour', '#000080');
     } else {
       const nid = D.length ? Math.max(...D.map((x) => +x.id)) + 1 : 1;
       const item = initNewEntity({ id: nid, ...row });
       D.push(item);
       cstAfterMutation('cst-objectifs', 'objectif', nid, 'Création', row.objectif.slice(0, 80), getCstCurrentUser());
-      cstToast('Objectif ajouté', '#16a34a');
+      cstToast('Objectif ajouté', '#000080');
     }
     closeCstModal();
     cstRefresh('cst-objectifs');
@@ -749,12 +749,12 @@ function handleSave(btn) {
       const c = D.find((x) => x.id === id);
       if (c) Object.assign(c, row);
       cstAfterMutation('cst-changements', 'changement', id, 'Modification', row.changement.slice(0, 80));
-      cstToast('Changement mis à jour', '#16a34a');
+      cstToast('Changement mis à jour', '#000080');
     } else {
       const nid = nextId('CHG', D);
       D.push({ id: nid, ...row });
       cstAfterMutation('cst-changements', 'changement', nid, 'Création', row.changement.slice(0, 80));
-      cstToast('Changement ajouté', '#16a34a');
+      cstToast('Changement ajouté', '#000080');
     }
     closeCstModal();
     cstRefresh('cst-changements');
@@ -780,7 +780,7 @@ function handleSave(btn) {
     window.cst_selectedRev = revId;
     cstAfterMutation('cst-revue', 'revue', revId, 'Création', `Revue ${revId}`, getCstCurrentUser());
     closeCstModal();
-    cstToast('Revue créée', '#16a34a');
+    cstToast('Revue créée', '#000080');
     cstRefresh('cst-revue');
     return;
   }
@@ -800,12 +800,12 @@ function handleSave(btn) {
       const a = D.find((x) => x.id === id);
       if (a) Object.assign(a, row);
       cstAfterMutation('cst-actions', 'action', id, 'Modification', row.action.slice(0, 80));
-      cstToast('Action mise à jour', '#16a34a');
+      cstToast('Action mise à jour', '#000080');
     } else {
       const nid = nextId('ACT', D);
       D.push({ id: nid, ...row });
       cstAfterMutation('cst-actions', 'action', nid, 'Création', row.action.slice(0, 80));
-      cstToast('Action ajoutée', '#16a34a');
+      cstToast('Action ajoutée', '#000080');
     }
     closeCstModal();
     cstRefresh('cst-actions');
@@ -831,7 +831,7 @@ function handleSave(btn) {
     };
     cstAfterMutation('cst-politique', 'politique', 'POL-QSE', 'Enregistrement', 'Métadonnées politique');
     closeCstModal();
-    cstToast('Politique enregistrée', '#16a34a');
+    cstToast('Politique enregistrée', '#000080');
     cstRefresh('cst-politique');
     return;
   }
@@ -858,7 +858,7 @@ function handleSave(btn) {
         normalizeCstDocument(d);
         cstAfterMutation('cst-docs', 'document', id, 'Modification', row.nom);
       }
-      cstToast('Document mis à jour', '#16a34a');
+      cstToast('Document mis à jour', '#000080');
     } else {
       const nid = nextCstDocId();
       const newDoc = normalizeCstDocument({
@@ -871,7 +871,7 @@ function handleSave(btn) {
       });
       D.push(newDoc);
       cstAfterMutation('cst-docs', 'document', nid, 'Création', row.nom);
-      cstToast('Document ajouté', '#16a34a');
+      cstToast('Document ajouté', '#000080');
     }
     closeCstModal();
     cstRefresh('cst-docs');

@@ -72,7 +72,7 @@
   height: 36px;
   border-radius: 10px;
   font-size: 14px;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.22);
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.22);
 }
 
 .t-logo-txt {
@@ -193,7 +193,7 @@
 }
 
 .sidebar--minimal .s-item.active {
-  background: rgba(2, 132, 199, 0.18);
+  background: rgba(255, 255, 255, 0.16);
   color: #fff;
   font-weight: 600;
   box-shadow: none;
@@ -438,11 +438,11 @@
 }
 
 .bp {
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.28);
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.25);
 }
 
 .bp:hover {
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.32);
 }
 
 .bsm {

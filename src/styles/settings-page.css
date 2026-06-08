@@ -90,7 +90,7 @@
 }
 
 .xm-toggle input:checked + .xm-toggle__track {
-  background: var(--qhse-quality);
+  background: var(--color-primary, #000080);
 }
 
 .xm-toggle input:checked + .xm-toggle__track .xm-toggle__thumb {

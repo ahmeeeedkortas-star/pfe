@@ -16,7 +16,7 @@
   position: relative;
   z-index: 1;
   --doc-red: #a32d2d;
-  --doc-blue: #185fa5;
+  --doc-blue: #000080;
 }
 
 #content.doc-mode .doc-module-root,

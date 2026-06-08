@@ -2,34 +2,22 @@
  * Modules — cartes claires, accent par module
  */
 
-/* Accents modules — nuances de bleu (charte unifiée bleu/blanc) */
+/* Accents modules — navy unifié #000080 */
 #main {
-  --module-accent: #0284c7;
-  --module-accent-soft: #f0f9ff;
+  --module-accent: #000080;
+  --module-accent-soft: #f0f0fa;
 }
 
 #main[data-module='rc'],
 #main[data-module='audit'],
-#main[data-module='doc'] {
-  --module-accent: #0284c7;
-  --module-accent-soft: #f0f9ff;
-}
-
-#main[data-module='nc'] {
-  --module-accent: #0369a1;
-  --module-accent-soft: #e0f2fe;
-}
-
+#main[data-module='doc'],
+#main[data-module='nc'],
 #main[data-module='cst'],
-#main[data-module='env'] {
-  --module-accent: #0ea5e9;
-  --module-accent-soft: #f0f9ff;
-}
-
+#main[data-module='env'],
 #main[data-module='sec'],
 #main[data-module='fives'] {
-  --module-accent: #38bdf8;
-  --module-accent-soft: #f0f9ff;
+  --module-accent: #000080;
+  --module-accent-soft: #f0f0fa;
 }
 
 .mod-topbar {
@@ -91,9 +79,9 @@
 }
 
 #main #content:not(.home-mode) .btn.bp {
-  background: linear-gradient(135deg, var(--module-accent), var(--color-primary-dark, #0369a1)) !important;
+  background: linear-gradient(135deg, var(--color-primary-dark, #000066), var(--module-accent, var(--color-primary, #000080))) !important;
   border-color: transparent !important;
-  box-shadow: 0 2px 8px color-mix(in srgb, var(--module-accent) 35%, transparent) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.25) !important;
 }
 
 .content-inner {

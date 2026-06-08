@@ -1,0 +1,171 @@
+/**
+ * Force navy #000080 partout — surcharge les bleus hardcodés restants.
+ * Importé en tout dernier (après theme-dark.css).
+ */
+
+:root {
+  --blue: #000080 !important;
+  --blue-soft: #f0f0fa !important;
+  --qhse-quality: #000080 !important;
+  --qhse-quality-dark: #000066 !important;
+  --doc-blue: #000080 !important;
+  --rc-accent: #000080 !important;
+}
+
+/* Badge info (.bb) → navy */
+.bb {
+  background: #f0f0fa !important;
+  color: #000080 !important;
+  border-color: #d0d0e8 !important;
+}
+
+.link {
+  color: #000080 !important;
+}
+
+.link:hover {
+  color: #000066 !important;
+}
+
+/* Soft backgrounds bleu clair → navy soft */
+[style*='#eff6ff'],
+[style*='#EFF6FF'],
+[style*='#f0f9ff'],
+[style*='#F0F9FF'],
+[style*='#E6F1FB'],
+[style*='#e6f1fb'] {
+  /* inline overrides handled below via attribute selectors where possible */
+}
+
+/* Accents texte bleu hardcodé dans styles inline courants */
+[style*='color:#1e40af'],
+[style*='color: #1e40af'],
+[style*='color:#2563eb'],
+[style*='color: #2563eb'],
+[style*='color:#1d4ed8'],
+[style*='color:#185fa5'],
+[style*='color:#0284c7'] {
+  color: #000080 !important;
+}
+
+[style*='background:#eff6ff'],
+[style*='background: #eff6ff'],
+[style*='background:#EFF6FF'] {
+  background: #f0f0fa !important;
+}
+
+[style*='border-left:3px solid var(--blue)'],
+[style*='border-left:3px solid #0284c7'],
+[style*='border-left:3px solid #2563eb'] {
+  border-left-color: #000080 !important;
+}
+
+[style*='accent-color:#2563eb'],
+[style*='accent-color: #2563eb'] {
+  accent-color: #000080 !important;
+}
+
+/* Module accents fallback */
+#main[data-module='fives'],
+#main[data-module='sec'],
+#main[data-module='cst'],
+#main[data-module='env'],
+#main[data-module='rc'],
+#main[data-module='audit'],
+#main[data-module='doc'] {
+  --module-accent: #000080 !important;
+  --module-accent-soft: #f0f0fa !important;
+}
+
+/* Fives module accent vars */
+.ss5-root,
+.fives-page,
+[data-module='fives'] {
+  --module-accent: #000080 !important;
+}
+
+/* KPI / rapports headers */
+.nc-rapport-header,
+.rc-kpi-hero,
+.nc-kpi-obj-badge,
+.rc-act-8d-btn {
+  background: linear-gradient(135deg, #f8f9fc, #f0f0fa) !important;
+  color: #000080 !important;
+  border-color: #d0d0e8 !important;
+}
+
+.nc-rapport-header {
+  border-left-color: #000080 !important;
+}
+
+.rc-act-ref {
+  color: #000080 !important;
+  background: #f0f0fa !important;
+}
+
+.rc-act-8d-btn {
+  background: #f0f0fa !important;
+  color: #000080 !important;
+  border-color: #d0d0e8 !important;
+}
+
+/* Doc module */
+.doc-module {
+  --doc-blue: #000080 !important;
+}
+
+/* Sec checklist nav active */
+.sec-cl-nav-card.is-active {
+  border-color: #000080 !important;
+  background: linear-gradient(135deg, #000066, #000080) !important;
+}
+
+/* SST hero gradients */
+.sst-hero,
+.acc-hero {
+  background: linear-gradient(135deg, #000050 0%, #000080 55%, #000066 100%) !important;
+}
+
+/* Fives / CST headers */
+.fives-hero,
+.cst-hero-banner {
+  background: linear-gradient(135deg, #000066, #000080) !important;
+}
+
+/* Progress bars & sliders accent */
+input[type='range'] {
+  accent-color: #000080;
+}
+
+.rc-act-range {
+  accent-color: #000080 !important;
+}
+
+/* Odoo chips active */
+.odoo-chip-active {
+  background: #f0f0fa !important;
+  color: #000080 !important;
+  border-color: #d0d0e8 !important;
+}
+
+/* Icon nav tiles — primary blue items */
+.ini-lb,
+.odoo-cp-title {
+  /* inherit from tokens */
+}
+
+/* Dark mode — navy cohérent */
+html[data-theme='dark'] {
+  --blue: #8888cc !important;
+  --color-primary-light: #5555bb !important;
+}
+
+html[data-theme='dark'] .link {
+  color: #8888cc !important;
+}
+
+html[data-theme='dark'] .bb {
+  background: rgba(0, 0, 128, 0.25) !important;
+  color: #c8c8ff !important;
+  border-color: rgba(136, 136, 204, 0.35) !important;
+}

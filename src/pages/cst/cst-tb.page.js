@@ -2,7 +2,7 @@
  * Tableau de bord SMI — Contexte & Stratégie.
  */
 import { seedCst, getCstObjectifs, getCstActions, getCstRisques, getCstChangements, getCstRevues } from '../../data/cst.data.js';
-import { esc, progBar } from '../../components/cst/cst-utils.js';
+import { esc, progBar, cstStatutBadge } from '../../components/cst/cst-utils.js';
 import { renderKpiCardCenter } from '../../components/icons/ui-helpers.js';
 
 export function renderCstTb() {
@@ -83,7 +83,7 @@ export function renderCstTb() {
   const recentActs = [...acts]
     .slice(0, 4)
     .map(
-      (a) => `<div class="cst-recent-act"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-weight:700;font-size:var(--fs-sm)">${esc(a.id)}</span><span class="badge bb">${esc(a.statut)}</span></div><div style="font-size:var(--fs-xs);color:var(--muted);margin-bottom:6px">${esc(a.action)}</div>${progBar(a.prog, { enRetard: a.statut === 'En retard' })}</div>`
+      (a) => `<div class="cst-recent-act"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-weight:700;font-size:var(--fs-sm)">${esc(a.id)}</span>${cstStatutBadge(a.statut)}</div><div style="font-size:var(--fs-xs);color:var(--muted);margin-bottom:6px">${esc(a.action)}</div>${progBar(a.prog, { enRetard: a.statut === 'En retard' })}</div>`
     )
     .join('');
 

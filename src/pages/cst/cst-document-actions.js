@@ -88,7 +88,7 @@ export function cstDocApprove(id) {
     cstToast(res.msg || 'Approbation impossible', '#dc2626');
     return;
   }
-  cstToast(`${d.version} approuvée et en vigueur`, '#16a34a');
+  cstToast(`${d.version} approuvée et en vigueur`, '#000080');
   cstRefresh(window.STATE?.page || 'cst-doc-read');
 }
 
@@ -143,7 +143,7 @@ export function cstOpenImportModal(revueId = null) {
     'beforeend',
     `<div id="cst_modal_overlay" class="xm-modal-overlay cst-modal-overlay" data-cst-modal>
       <div class="xm-modal-card cst-modal-card" style="max-width:620px">
-        <div class="cst-modal-gradient" style="background:linear-gradient(135deg,#185FA5,#2563eb)">
+        <div class="cst-modal-gradient">
           <div class="cst-modal-head">
             <div><div class="cst-modal-title">${title}</div><div class="cst-modal-sub">ISO 7.5 — Informations documentées</div></div>
             <button type="button" class="btn bsm cst-modal-close-btn" data-cst-import-close>✕</button>
@@ -239,7 +239,7 @@ function submitCstImport() {
     cstAfterMutation('cst-revue', 'document-revue', `${revueId}/${id}`, 'Import compte rendu', `${nom} (${file.name})`, auteur);
 
     closeImportModal();
-    cstToast('Pièce jointe ajoutée à la revue', '#16a34a');
+    cstToast('Pièce jointe ajoutée à la revue', '#000080');
     window.cst_selectedRev = revueId;
     window.cst_revueTab = 4;
     cstRefresh('cst-revue');

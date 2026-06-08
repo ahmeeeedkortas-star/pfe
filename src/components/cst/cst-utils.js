@@ -67,7 +67,7 @@ export function cstModal(title, subtitle, colFrom, colTo, bodyHtml, saveAttrs = 
     : '<span></span>';
   return `<div id="cst_modal_overlay" class="xm-modal-overlay cst-modal-overlay" data-cst-modal>
     <div class="xm-modal-card cst-modal-card" style="max-width:620px">
-      <div class="cst-modal-gradient" style="background:linear-gradient(135deg,${colFrom},${colTo})">
+      <div class="cst-modal-gradient">
         <div class="cst-modal-head">
           <div><div class="cst-modal-title">${esc(title)}</div><div class="cst-modal-sub">${esc(subtitle)}</div></div>
           <button type="button" class="btn bsm cst-modal-close-btn" data-cst-modal-close>✕</button>
@@ -164,8 +164,8 @@ export function scoreColor(n) {
 export function docTypeBadge(type) {
   const colors = {
     Procédure: '#2563eb',
-    Politique: '#16a34a',
-    Manuel: '#16a34a',
+    Politique: '#000080',
+    Manuel: '#000080',
     Instruction: '#7c3aed',
     Enregistrement: '#f59e0b',
     Plan: '#64748b',
@@ -177,10 +177,10 @@ export function docTypeBadge(type) {
 
 export const PESTEL_DEFAULTS = {
   Politique: { ic: '🏛', col: '#2563eb' },
-  Économique: { ic: '💰', col: '#16a34a' },
+  Économique: { ic: '💰', col: '#000080' },
   Social: { ic: '👥', col: '#f59e0b' },
   Technologique: { ic: '⚙', col: '#7c3aed' },
-  Environnemental: { ic: '🌿', col: '#16a34a' },
+  Environnemental: { ic: '🌿', col: '#000080' },
   Légal: { ic: '⚖', col: '#dc2626' },
 };
 

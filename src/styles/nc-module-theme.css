@@ -1,0 +1,147 @@
+/**
+ * Module NC — boutons & accents harmonisés (#000080)
+ * Les couleurs de statut (badges, gravité, retard) restent inchangées.
+ */
+
+#main[data-module='nc'] {
+  --module-accent: #000080;
+  --module-accent-soft: #f0f0fa;
+  --nc-accent: #000080;
+  --nc-accent-dark: #000066;
+  --nc-accent-soft: #f0f0fa;
+}
+
+/* Boutons primaires NC */
+#main[data-module='nc'] .btn.bp,
+#main[data-module='nc'] .btn-primary,
+#main[data-module='nc'] #content .btn.bp,
+.nc-actions-page .btn.bp,
+.nc-rapport-page .btn.bp,
+[data-page='nc-liste'] .btn.bp,
+[data-page='nc-kpi'] .btn.bp,
+[data-page='nc-new'] .btn.bp,
+[data-page='nc-actions'] .btn.bp,
+[data-page='nc-rapport'] .btn.bp {
+  background: linear-gradient(135deg, var(--nc-accent-dark, #000066), var(--nc-accent, #000080)) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.25) !important;
+}
+
+#main[data-module='nc'] .btn.bp:hover,
+.nc-actions-page .btn.bp:hover,
+[data-page='nc-new'] .btn.bp:hover,
+[data-page='nc-rapport'] .btn.bp:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.32) !important;
+  filter: brightness(1.04);
+}
+
+/* Boutons secondaires NC */
+#main[data-module='nc'] .btn:not(.bp):not(.btn-danger),
+[data-page='nc-liste'] .btn:not(.bp):not(.btn-danger),
+[data-page='nc-new'] .btn:not(.bp):not(.btn-danger),
+.nc-rapport-page .btn:not(.bp):not(.btn-danger) {
+  background: #ffffff !important;
+  border: 1.5px solid #e4e8f0 !important;
+  color: #1a1a2e !important;
+}
+
+#main[data-module='nc'] .btn:not(.bp):not(.btn-danger):hover,
+[data-page='nc-liste'] .btn:not(.bp):not(.btn-danger):hover {
+  background: #f8f9fc !important;
+  border-color: color-mix(in srgb, var(--nc-accent) 30%, #e4e8f0) !important;
+  color: var(--nc-accent) !important;
+}
+
+/* Panneau Odoo (liste NC) */
+#main[data-module='nc'] .odoo-search:focus-within {
+  border-color: var(--nc-accent) !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 128, 0.12) !important;
+}
+
+#main[data-module='nc'] .odoo-dd-item-active {
+  background: var(--nc-accent-soft) !important;
+  color: var(--nc-accent) !important;
+}
+
+#main[data-module='nc'] .odoo-cp-btn:hover {
+  border-color: color-mix(in srgb, var(--nc-accent) 25%, #e4e8f0) !important;
+  color: var(--nc-accent) !important;
+}
+
+/* Onglets KPI NC */
+#main[data-module='nc'] .nc-kpi-tab.active,
+.nc-kpi-page .nc-kpi-tab.active {
+  color: var(--nc-accent, #000080) !important;
+}
+
+/* En-tête rapport NC */
+#main[data-module='nc'] .nc-rapport-header {
+  background: linear-gradient(135deg, #ffffff, var(--nc-accent-soft)) !important;
+  border-left-color: var(--nc-accent) !important;
+}
+
+/* Page actions NC */
+.nc-actions-page {
+  --rc-act: #000080;
+}
+
+.nc-actions-page .rc-act-view-btn.active {
+  background: var(--nc-accent, #000080) !important;
+}
+
+.nc-actions-page .rc-act-ref {
+  color: var(--nc-accent, #000080) !important;
+  background: var(--nc-accent-soft, #f0f0fa) !important;
+}
+
+.nc-actions-page .rc-act-col-add:hover {
+  border-color: var(--nc-accent, #000080) !important;
+  color: var(--nc-accent, #000080) !important;
+}
+
+.nc-actions-page .rc-act-kpi--ring {
+  color: var(--nc-accent, #000080) !important;
+}
+
+/* Formulaire nouvelle NC */
+[data-page='nc-new'] .rc-new-head {
+  background: linear-gradient(135deg, #000066, #000080) !important;
+}
+
+/* Surface v11 sur pages NC */
+#main[data-module='nc'] #content.xm-v11-surface .btn.bp,
+#main[data-module='nc'] #content.xm-v11-surface .btn.bp.xm-btn {
+  background: linear-gradient(135deg, var(--nc-accent-dark), var(--nc-accent)) !important;
+  border-color: transparent !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.25) !important;
+}
+
+#main[data-module='nc'] #content.xm-v11-surface .btn.bp:hover {
+  background: linear-gradient(135deg, #000050, var(--nc-accent-dark)) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.3) !important;
+}
+
+#main[data-module='nc'] #content.xm-v11-surface .fi:focus,
+#main[data-module='nc'] #content.xm-v11-surface select.fi:focus {
+  border-color: var(--nc-accent) !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.12) !important;
+}
+
+/* Icon-nav NC */
+#main[data-module='nc'] .ini.active .ini-lb {
+  color: var(--nc-accent) !important;
+}
+
+/* Boutons période KPI NC */
+#main[data-module='nc'] .rc-kpi-per-btn.active,
+.nc-kpi-page .rc-kpi-per-btn.active {
+  background: var(--nc-accent, #000080) !important;
+  color: #fff !important;
+}
+
+#main[data-module='nc'] .kpi-tab.active,
+.nc-kpi-page .kpi-tab.active {
+  color: var(--nc-accent, #000080) !important;
+  border-bottom-color: var(--nc-accent, #000080) !important;
+}

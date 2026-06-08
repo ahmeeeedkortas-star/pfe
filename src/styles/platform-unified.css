@@ -6,10 +6,10 @@
 /* ── Tokens runtime (alignés variables.css) ── */
 :root {
   --bg: var(--color-surface-muted, #f8fafc);
-  --blue: var(--color-primary, #0284c7);
+  --blue: var(--color-primary, #000080);
   --shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
-  --shadow-hover: 0 6px 20px rgba(2, 132, 199, 0.13);
-  --shadow-primary: 0 2px 8px rgba(2, 132, 199, 0.28);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 128, 0.1);
+  --shadow-primary: 0 2px 8px rgba(0, 0, 128, 0.28);
   --icon-size-sm: 16px;
   --icon-size-md: 20px;
   --icon-size-lg: 24px;
@@ -141,7 +141,7 @@ body {
 .btn-primary:hover,
 .bp:hover {
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.32) !important;
   filter: brightness(1.03);
 }
 
@@ -270,10 +270,10 @@ textarea.fi:focus {
 
 .s-item.active .xm-icon-sidebar,
 .s-item.active .xm-icon-sidebar.is-active {
-  background: rgba(2, 132, 199, 0.22) !important;
+  background: rgba(255, 255, 255, 0.18) !important;
   color: #fff !important;
-  border-color: rgba(56, 189, 248, 0.35) !important;
-  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18) !important;
 }
 
 /* ── Icon nav module ── */

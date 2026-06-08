@@ -172,7 +172,7 @@ function showEntityRevisionsModal(entityType, id) {
     'beforeend',
     `<div id="cst_modal_overlay" class="xm-modal-overlay cst-modal-overlay" data-cst-modal>
       <div class="xm-modal-card cst-modal-card" style="max-width:560px">
-        <div class="cst-modal-gradient" style="background:linear-gradient(135deg,#185FA5,#2563eb)">
+        <div class="cst-modal-gradient">
           <div class="cst-modal-head">
             <div><div class="cst-modal-title">Révisions</div><div class="cst-modal-sub">${esc(label)}</div></div>
             <button type="button" class="btn bsm" data-cst-trace-modal-close>✕</button>

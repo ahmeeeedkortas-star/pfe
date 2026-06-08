@@ -1,5 +1,5 @@
-/** @legacy — Accueil d'origine : mosaïque photo + modules dégradés */
-import { renderHomePhotoMosaic, renderHomeIsoBar } from '../../config/home-photos.js';
+/** @legacy — Accueil harmonisé sidebar navy + contenu blanc */
+import { renderHomeIsoBar } from '../../config/home-photos.js';
 import { renderHomeModuleIcon, renderHomeKpiIcon } from '../../components/icons/home-module-icons.js';
 import { BRAND_LOGO_URL, BRAND_NAME, BRAND_TAGLINE } from '../../config/brand.js';
 import { isEmptyPlatform } from '../../core/empty-platform.js';
@@ -9,16 +9,16 @@ const empty = isEmptyPlatform();
 
 const homeKpis = empty
   ? [
-      ['0', 'À traiter', 'siren', '#f87171', 'rgba(248,113,113,.15)'],
-      ['0', 'À traiter', 'clock', '#fb923c', 'rgba(251,146,60,.12)'],
-      ['—', 'Objectif 90 %', 'check-circle', '#4ade80', 'rgba(74,222,128,.12)'],
-      ['—', 'En cours', 'calendar', '#94a3b8', 'rgba(148,163,184,.12)'],
+      ['0', 'À traiter', 'siren', '#ef4444', '#fef2f2'],
+      ['0', 'À traiter', 'clock', '#f97316', '#fff7ed'],
+      ['—', 'Objectif 90 %', 'check-circle', '#16a34a', '#f0fdf4'],
+      ['—', 'En cours', 'calendar', '#64748b', '#f8fafc'],
     ]
   : [
-      ['3', 'À traiter', 'siren', '#f87171', 'rgba(248,113,113,.15)'],
-      ['8', 'À traiter', 'clock', '#fb923c', 'rgba(251,146,60,.12)'],
-      ['94%', 'Objectif : 90 %', 'check-circle', '#4ade80', 'rgba(74,222,128,.12)'],
-      ['Mai 2026', 'En cours', 'calendar', '#94a3b8', 'rgba(148,163,184,.12)'],
+      ['3', 'À traiter', 'siren', '#ef4444', '#fef2f2'],
+      ['8', 'À traiter', 'clock', '#f97316', '#fff7ed'],
+      ['94%', 'Objectif : 90 %', 'check-circle', '#16a34a', '#f0fdf4'],
+      ['Mai 2026', 'En cours', 'calendar', '#64748b', '#f8fafc'],
     ];
 
 const kpiLabels = ['Alertes critiques', 'Actions en retard', 'Conformité globale', 'Période active'];
@@ -26,12 +26,12 @@ const kpiLabels = ['Alertes critiques', 'Actions en retard', 'Conformité global
 function renderKpiRow() {
   return homeKpis
     .map(
-      ([v, hint, ic, c, bg], i) => `
-    <div class="xm-home-kpi" style="background:${bg};border:1px solid ${c}40;animation-delay:${0.1 + i * 0.05}s">
-      <span style="color:${c}">${renderHomeKpiIcon(ic, 18)}</span>
+      ([v, hint, ic, accent, bg], i) => `
+    <div class="home-kpi-card" style="--kpi-accent:${accent};--kpi-bg:${bg};animation-delay:${0.1 + i * 0.05}s">
+      <span class="home-kpi-card__ic">${renderHomeKpiIcon(ic, 18)}</span>
       <div>
-        <div style="font-size:15px;font-weight:700;color:${c};line-height:1;font-family:monospace">${v}</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.5);margin-top:2px">${kpiLabels[i]}${hint ? ` · ${hint}` : ''}</div>
+        <div class="home-kpi-card__val">${v}</div>
+        <div class="home-kpi-card__lbl">${kpiLabels[i]}${hint ? ` · ${hint}` : ''}</div>
       </div>
     </div>`
     )
@@ -45,48 +45,50 @@ function renderModules() {
     <div class="hmod" role="button" tabindex="0"
       onclick="goModule('${m.mod}')"
       onkeydown="if(event.key==='Enter')goModule('${m.mod}')"
-      style="animation-delay:${0.15 + i * 0.04}s">
-      <div class="hmod-wrap" style="background:${m.bg};box-shadow:${m.shadow}">
-        <div class="hmod-shine" aria-hidden="true"></div>
-        ${badge != null ? `<span class="hmod-badge" style="background:${m.bc}">${badge}</span>` : ''}
-        ${renderHomeModuleIcon(m.mod, 46)}
+      style="--mod-accent:${m.bc};animation-delay:${0.15 + i * 0.04}s">
+      <div class="hmod-card">
+        ${badge != null ? `<span class="hmod-badge">${badge}</span>` : ''}
+        <div class="hmod-icon-wrap" style="background:${m.bg};box-shadow:${m.shadow}">
+          ${renderHomeModuleIcon(m.mod, 42)}
+        </div>
+        <span class="hmod-title">${m.label}</span>
+        <span class="hmod-sub">${m.sub}</span>
+        <span class="hmod-arrow">Accéder →</span>
       </div>
-      <span class="hmod-title">${m.label}</span>
-      <span class="hmod-sub">${m.sub}</span>
     </div>`;
   }).join('');
 }
 
 export default {
   accueil: () => `
-<div class="home-wrap home-wrap--classic home-wrap--photo">
+<div class="home-wrap home-wrap--unified">
 
-  <div class="home-bg home-bg--photos" aria-hidden="true">
-    ${renderHomePhotoMosaic()}
-    <div class="home-bg__overlay"></div>
+  <div class="home-bg home-bg--unified" aria-hidden="true">
+    <div class="home-bg__blob home-bg__blob--navy"></div>
+    <div class="home-bg__blob home-bg__blob--soft"></div>
   </div>
 
   <div class="home-content">
 
-    <header class="home-header-panel">
-      <div class="home-brand-row">
-        <img class="home-logo" src="${BRAND_LOGO_URL}" alt="${BRAND_NAME}">
+    <header class="home-hero">
+      <div class="home-hero-brand">
+        <img class="home-hero-logo" src="${BRAND_LOGO_URL}" alt="${BRAND_NAME}">
         <div>
-          <div class="home-brand-name">${BRAND_NAME}</div>
-          <div class="home-brand-tag">${BRAND_TAGLINE}</div>
-          <div class="home-brand-lead">Notre expérience fait la différence</div>
+          <h1 class="home-hero-title">${BRAND_NAME}</h1>
+          <p class="home-hero-tagline">${BRAND_TAGLINE}</p>
+          <p class="home-hero-motto">Notre expérience fait la différence</p>
         </div>
       </div>
-      <p class="home-brand-desc">Plateforme SMI · QHSE · ISO 9001 · ISO 14001 · ISO 45001</p>
+      <p class="home-hero-desc">Plateforme SMI · QHSE · ISO 9001 · ISO 14001 · ISO 45001</p>
       ${renderHomeIsoBar()}
       <div class="home-kpi-row">${renderKpiRow()}</div>
     </header>
 
-    <p class="home-section-title">Modules du système de management</p>
+    <p class="home-section-label">Modules du système de management</p>
 
     <div class="home-modules-grid">${renderModules()}</div>
 
-    <p class="home-footer-line">${BRAND_NAME} · Ingénierie mécanique &amp; automatisation · Responsable QHSE : KORTAS.A</p>
+    <footer class="home-footer">${BRAND_NAME} · Ingénierie mécanique &amp; automatisation · Responsable QHSE : KORTAS.A</footer>
 
   </div>
 </div>`,

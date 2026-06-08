@@ -62,8 +62,8 @@ body{font-family:var(--font,'Inter',sans-serif);background:var(--bg);font-size:v
 .btn{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:8px;font-size:11px;font-weight:600;height:34px;cursor:pointer;border:1.5px solid #e2e8f0;background:#fff;color:#374151;transition:all .15s;font-family:'Inter',sans-serif;white-space:nowrap;line-height:1.4;box-sizing:border-box}
 .btn:hover{background:#f8fafc;border-color:#cbd5e1;transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .btn:active{transform:translateY(0)}
-.bp{background:linear-gradient(135deg,#0284c7,#0369a1);color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(2,132,199,.3)}
-.bp:hover{background:linear-gradient(135deg,#0369a1,#075985);box-shadow:0 4px 14px rgba(2,132,199,.35);transform:translateY(-1px)}
+.bp{background:linear-gradient(135deg,#000066,#000080);color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(0,0,128,.25)}
+.bp:hover{background:linear-gradient(135deg,#000050,#000066);box-shadow:0 4px 14px rgba(0,0,128,.32);transform:translateY(-1px)}
 .bg2{background:linear-gradient(135deg,#166534,#16a34a);color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(22,163,74,.25)}
 .bg2:hover{background:linear-gradient(135deg,#14532d,#15803d);box-shadow:0 4px 14px rgba(22,163,74,.4)}
 .btn-danger{background:linear-gradient(135deg,#991b1b,#dc2626);color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(220,38,38,.25)}
@@ -90,9 +90,9 @@ body{font-family:var(--font,'Inter',sans-serif);background:var(--bg);font-size:v
 .mv{font-size:19px;font-weight:700;line-height:1.1}
 .ms{width:1px;height:32px;background:var(--border);flex-shrink:0}
 .sel{padding:8px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:11px;background:#fff;color:#374151;font-family:'Inter',sans-serif;transition:border-color .15s,box-shadow .15s;cursor:pointer}
-.sel:focus{outline:none;border-color:#0284c7;box-shadow:0 0 0 3px rgba(2,132,199,.1)}
+.sel:focus{outline:none;border-color:#000080;box-shadow:0 0 0 3px rgba(0,0,128,.12)}
 .fi{padding:8px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:11px;color:var(--text);background:var(--white);width:100%;font-family:'Inter',sans-serif;transition:border-color .15s,box-shadow .15s}
-.fi:focus{outline:none;border-color:#0284c7;box-shadow:0 0 0 3px rgba(2,132,199,.1)}
+.fi:focus{outline:none;border-color:#000080;box-shadow:0 0 0 3px rgba(0,0,128,.12)}
 select.fi{cursor:pointer}
 textarea.fi{resize:vertical;min-height:55px}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}

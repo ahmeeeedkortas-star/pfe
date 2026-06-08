@@ -7,9 +7,9 @@
   z-index: 25;
   background: linear-gradient(
     180deg,
-    rgba(15, 23, 42, 0.97) 0%,
-    rgba(12, 18, 34, 0.98) 50%,
-    rgba(10, 16, 32, 0.99) 100%
+    #000080 0%,
+    #000070 50%,
+    #000060 100%
   ) !important;
   border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: 4px 0 24px rgba(0, 0, 0, 0.2) !important;
@@ -45,9 +45,9 @@
 }
 
 .s-item.active {
-  background: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.14) !important;
   color: #fff !important;
-  border-left: 3px solid var(--color-primary, #0284c7) !important;
+  border-left: 3px solid rgba(255, 255, 255, 0.85) !important;
   font-weight: 600 !important;
   box-shadow: none !important;
 }
@@ -56,10 +56,10 @@
 
 .s-item.active .xm-icon-sidebar,
 .s-item.active .xm-icon-sidebar.is-active {
-  background: rgba(2, 132, 199, 0.22) !important;
+  background: rgba(255, 255, 255, 0.18) !important;
   color: #fff !important;
-  border-color: rgba(56, 189, 248, 0.35) !important;
-  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
 }
 
 .s-item .xm-icon-sidebar {

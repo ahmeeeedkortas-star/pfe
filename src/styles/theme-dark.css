@@ -1,90 +1,415 @@
 /**
- * Mode sombre global — activé via html[data-theme="dark"] (Paramètres).
+ * Mode sombre — html[data-theme="dark"]
+ * Importé en dernier pour surcharger le thème clair navy/blanc.
+ * Couleurs de statut (badges) conservées.
  */
+
 html[data-theme='dark'] {
-  --bg: #0a1020;
-  --white: #152238;
-  --border: rgba(255, 255, 255, 0.08);
-  --muted: #94a3b8;
-  --navy: #e2e8f0;
   color-scheme: dark;
+
+  /* Tokens surfaces */
+  --bg: #0a0e18;
+  --bg-elevated: #121828;
+  --white: #151d30;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #e8ecf4;
+  --text-secondary: #b8c4d4;
+  --muted: #8b9cb0;
+  --navy: #e8ecf4;
+
+  --color-surface: #151d30;
+  --color-surface-muted: #0f1524;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text: #e8ecf4;
+  --color-text-muted: #94a3b8;
+  --color-primary-soft: rgba(0, 0, 128, 0.22);
+
+  --brand-surface: #151d30;
+  --brand-surface-muted: #0f1524;
+
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.45);
+
+  --btn-secondary-border: rgba(255, 255, 255, 0.14);
+  --btn-secondary-hover-bg: rgba(255, 255, 255, 0.06);
 }
 
+/* ── Shell ── */
 html[data-theme='dark'] body,
-html[data-theme='dark'] #app-shell {
-  background: var(--bg);
-  color: var(--navy);
+html[data-theme='dark'] #app-shell,
+html[data-theme='dark'] .main,
+html[data-theme='dark'] #content,
+html[data-theme='dark'] .content:not(.home-mode) {
+  background: var(--bg) !important;
+  color: var(--color-text) !important;
 }
 
+html[data-theme='dark'] .content.home-mode {
+  background: var(--bg) !important;
+}
+
+/* ── Topbar ── */
 html[data-theme='dark'] .topbar {
-  background: rgba(11, 18, 32, 0.92);
-  border-bottom-color: var(--border);
+  background: rgba(10, 14, 24, 0.95) !important;
+  border-bottom: 1px solid var(--border) !important;
   backdrop-filter: blur(12px);
 }
 
-html[data-theme='dark'] .sidebar {
-  background: linear-gradient(180deg, #121c32 0%, #0c1222 50%, #0a1020 100%);
-  border-right-color: var(--border);
+html[data-theme='dark'] .t-logo-name {
+  color: #c8c8ff !important;
 }
 
-html[data-theme='dark'] .s-item {
-  color: #cbd5e1;
-}
-
-html[data-theme='dark'] .s-item:hover:not(.active) {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-}
-
-html[data-theme='dark'] .s-item.active {
-  background: var(--brand-red-muted);
-  color: #fff;
-  box-shadow: none;
-}
-
-html[data-theme='dark'] .main {
-  background: var(--bg);
-}
-
-html[data-theme='dark'] .mod-topbar {
-  background: var(--white);
-  border-color: var(--border);
-}
-
-html[data-theme='dark'] .card {
-  background: var(--white);
-  border-color: var(--border);
-  color: var(--navy);
+html[data-theme='dark'] .t-logo-tag,
+html[data-theme='dark'] .t-title {
+  color: var(--color-text) !important;
 }
 
 html[data-theme='dark'] .t-search {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid var(--border) !important;
 }
 
 html[data-theme='dark'] .t-search input {
-  color: #e2e8f0;
+  color: var(--color-text) !important;
 }
 
+html[data-theme='dark'] .t-search input::placeholder {
+  color: var(--muted);
+}
+
+/* ── Sidebar (navy conservé, légèrement assombri) ── */
+html[data-theme='dark'] .sidebar {
+  background: linear-gradient(180deg, #000070 0%, #000055 55%, #000040 100%) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme='dark'] .s-item,
+html[data-theme='dark'] .s-foot--item {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+html[data-theme='dark'] .s-item:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+html[data-theme='dark'] .s-item.active {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #fff !important;
+  border-left-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* ── Module chrome ── */
+html[data-theme='dark'] .mod-topbar,
+html[data-theme='dark'] .icon-nav {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .mod-title,
+html[data-theme='dark'] .mod-title .xm-page-title,
+html[data-theme='dark'] .xm-page-title,
+html[data-theme='dark'] .ct {
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .mod-sub {
+  color: var(--color-text-muted) !important;
+}
+
+/* ── Cartes & panneaux ── */
+html[data-theme='dark'] .card,
+html[data-theme='dark'] .odoo-panel,
+html[data-theme='dark'] .xm-v11-card,
+html[data-theme='dark'] .kc,
+html[data-theme='dark'] .mod-card,
+html[data-theme='dark'] #main #content:not(.home-mode) .card,
+html[data-theme='dark'] #main #content:not(.home-mode) .odoo-panel,
+html[data-theme='dark'] #main #content:not(.home-mode) .kc,
+html[data-theme='dark'] #main #content:not(.home-mode) .xm-register {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+  color: var(--color-text) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+html[data-theme='dark'] .card:hover,
+html[data-theme='dark'] .kc:hover {
+  box-shadow: var(--shadow-hover) !important;
+}
+
+/* ── Tableaux ── */
+html[data-theme='dark'] .tbl,
+html[data-theme='dark'] .tbl thead,
+html[data-theme='dark'] .tbl th {
+  background: var(--color-surface-muted) !important;
+  color: var(--color-text-muted) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .tbl td {
+  color: var(--color-text) !important;
+  border-bottom-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .tbl tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ── Formulaires ── */
+html[data-theme='dark'] .fi,
+html[data-theme='dark'] .sel,
+html[data-theme='dark'] .filter-sel,
+html[data-theme='dark'] textarea.fi,
+html[data-theme='dark'] .odoo-field input,
+html[data-theme='dark'] .odoo-field select,
+html[data-theme='dark'] .odoo-field textarea,
+html[data-theme='dark'] #content.xm-v11-surface .fi,
+html[data-theme='dark'] #content.xm-v11-surface select.fi {
+  background: var(--color-surface-muted) !important;
+  border-color: var(--border) !important;
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .fi:focus,
+html[data-theme='dark'] .sel:focus,
+html[data-theme='dark'] .filter-sel:focus {
+  border-color: #5555cc !important;
+  box-shadow: 0 0 0 3px rgba(85, 85, 204, 0.2) !important;
+}
+
+/* ── Boutons secondaires ── */
+html[data-theme='dark'] .btn:not(.bp):not(.btn-danger):not(.bg2):not(.bg3),
+html[data-theme='dark'] .odoo-cp-btn {
+  background: var(--color-surface-muted) !important;
+  border-color: var(--btn-secondary-border) !important;
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .btn:not(.bp):not(.btn-danger):not(.bg2):not(.bg3):hover:not(:disabled),
+html[data-theme='dark'] .odoo-cp-btn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(136, 136, 255, 0.35) !important;
+  color: #c8c8ff !important;
+}
+
+/* Boutons primaires — navy légèrement plus clair pour contraste */
+html[data-theme='dark'] .btn.bp,
+html[data-theme='dark'] .btn-primary,
+html[data-theme='dark'] .bp {
+  background: linear-gradient(135deg, #000099, #3333bb) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.4) !important;
+}
+
+html[data-theme='dark'] .btn.bp:hover:not(:disabled),
+html[data-theme='dark'] .bp:hover:not(:disabled) {
+  background: linear-gradient(135deg, #000080, #4444cc) !important;
+}
+
+/* ── Odoo panel ── */
+html[data-theme='dark'] .odoo-search {
+  background: var(--color-surface-muted) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .odoo-dd-menu {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+html[data-theme='dark'] .odoo-dd-item {
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .odoo-dd-item:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+html[data-theme='dark'] .odoo-dd-item-active {
+  background: rgba(0, 0, 128, 0.35) !important;
+  color: #c8c8ff !important;
+}
+
+html[data-theme='dark'] .odoo-cp-title {
+  color: var(--color-text) !important;
+}
+
+/* ── Icon nav ── */
+html[data-theme='dark'] .ini:not(.active) .xm-icon-tile {
+  background: var(--color-surface-muted) !important;
+  border-color: var(--border) !important;
+  color: var(--color-text-muted) !important;
+}
+
+html[data-theme='dark'] #main .ini.active {
+  background: rgba(0, 0, 128, 0.28) !important;
+  border-color: rgba(136, 136, 255, 0.3) !important;
+}
+
+html[data-theme='dark'] #main .ini.active .ini-lb {
+  color: #c8c8ff !important;
+}
+
+/* ── Recherche ── */
 html[data-theme='dark'] .search-panel {
-  background: #1a2336;
-  border-color: var(--border);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
 html[data-theme='dark'] .sr-item {
-  color: #e2e8f0;
+  color: var(--color-text) !important;
+  border-color: var(--border) !important;
 }
 
 html[data-theme='dark'] .sr-item:hover,
 html[data-theme='dark'] .sr-item.is-active {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.06) !important;
 }
 
 html[data-theme='dark'] .sr-item__label {
-  color: #f1f5f9;
+  color: var(--color-text) !important;
 }
 
-html[data-theme='light'] .search-panel {
-  background: var(--white);
+/* ── Accueil ── */
+html[data-theme='dark'] .home-wrap--unified,
+html[data-theme='dark'] .content.home-mode .home-wrap--unified {
+  background: linear-gradient(165deg, #0a0e18 0%, #0f1524 45%, #121828 100%) !important;
+}
+
+html[data-theme='dark'] .home-wrap--unified .home-hero,
+html[data-theme='dark'] .home-wrap--unified .hmod-card,
+html[data-theme='dark'] .home-wrap--unified .home-kpi-card,
+html[data-theme='dark'] .home-wrap--unified .home-iso-bar__item {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .home-wrap--unified .home-hero-title {
+  color: #c8c8ff !important;
+}
+
+html[data-theme='dark'] .home-wrap--unified .home-hero-tagline,
+html[data-theme='dark'] .home-wrap--unified .home-hero-desc,
+html[data-theme='dark'] .home-wrap--unified .hmod-sub,
+html[data-theme='dark'] .home-wrap--unified .home-footer {
+  color: var(--color-text-muted) !important;
+}
+
+html[data-theme='dark'] .home-wrap--unified .hmod-title {
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .home-wrap--unified .home-bg__blob--navy {
+  background: rgba(0, 0, 128, 0.15);
+}
+
+/* ── KPI / onglets ── */
+html[data-theme='dark'] .nc-kpi-tabs,
+html[data-theme='dark'] .rc-act-view-toggle,
+html[data-theme='dark'] .period-level-tabs {
+  background: var(--color-surface-muted) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .nc-kpi-tab.active,
+html[data-theme='dark'] .kpi-tab.active,
+html[data-theme='dark'] .tab.active {
+  background: var(--color-surface) !important;
+  color: #c8c8ff !important;
+}
+
+html[data-theme='dark'] .nc-rapport-header,
+html[data-theme='dark'] .rc-kpi-hero,
+html[data-theme='dark'] .rc-act-hero {
+  background: linear-gradient(135deg, var(--color-surface-muted), rgba(0, 0, 128, 0.15)) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .nc-kpi-obj-row,
+html[data-theme='dark'] .nc-kpi-hbar-track,
+html[data-theme='dark'] .period-date-picker {
+  background: var(--color-surface-muted) !important;
+  border-color: var(--border) !important;
+}
+
+/* ── Actions kanban ── */
+html[data-theme='dark'] .rc-act-card {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .rc-act-card-title {
+  color: var(--color-text) !important;
+}
+
+html[data-theme='dark'] .rc-act-stat-btn {
+  background: var(--color-surface-muted) !important;
+  border-color: var(--border) !important;
+  color: var(--muted) !important;
+}
+
+/* ── Paramètres ── */
+html[data-theme='dark'] .settings-card__title {
+  color: var(--color-text);
+}
+
+html[data-theme='dark'] .settings-row__text strong {
+  color: var(--color-text);
+}
+
+html[data-theme='dark'] .xm-toggle input:checked + .xm-toggle__track {
+  background: #3333bb;
+}
+
+/* ── Liens ── */
+html[data-theme='dark'] .link {
+  color: #8888ff;
+}
+
+/* ── Filtres ── */
+html[data-theme='dark'] .filter-bar,
+html[data-theme='dark'] #content.xm-v11-surface .filter-bar {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .filter-search {
+  background: var(--color-surface-muted) !important;
+  border-color: var(--border) !important;
+}
+
+/* ── SST modern surfaces ── */
+html[data-theme='dark'] .sst-kpi-strip,
+html[data-theme='dark'] .acc-kpi-strip,
+html[data-theme='dark'] .sst-filters-modern,
+html[data-theme='dark'] .acc-filters-modern {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .sst-risk-card {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .sec-cl-side-card {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+}
+
+/* ── Overlays ── */
+html[data-theme='dark'] .notif-panel {
+  background: var(--color-surface) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] .rc-new-form {
+  background: transparent;
+}
+
+html[data-theme='dark'] [data-page='nc-new'] .rc-new-head {
+  background: linear-gradient(135deg, #000055, #000099) !important;
 }

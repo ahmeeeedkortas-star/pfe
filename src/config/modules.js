@@ -23,13 +23,13 @@ export const ICONS = {
   ],
   cst: [
     { id: 'cst-tb', ic: '⊞', lb: 'Tableau de bord SMI', lbShort: 'Tbord', bg: '#E6F1FB', c: '#185FA5' },
-    { id: 'cst-swot', ic: '⬡', lb: 'Contexte & SWOT', lbShort: 'Contexte', bg: '#F0FDF4', c: '#166534' },
+    { id: 'cst-swot', ic: '⬡', lb: 'Contexte & SWOT', lbShort: 'Contexte', bg: '#f0f0fa', c: '#000080' },
     { id: 'cst-pestel', ic: '⊕', lb: 'Analyse PESTEL', lbShort: 'PESTEL', bg: '#F5F3FF', c: '#5B21B6' },
     { id: 'cst-parties', ic: '👥', lb: 'Parties intéressées', lbShort: 'Parties', bg: '#FFF7ED', c: '#9A3412' },
     { id: 'cst-risques', ic: '⚠', lb: 'Risques & Opportunités', lbShort: 'Risques', bg: '#FEF2F2', c: '#991B1B' },
     { id: 'cst-objectifs', ic: '🎯', lb: 'Objectifs stratégiques', lbShort: 'Objectifs', bg: '#EFF6FF', c: '#1E40AF' },
     { id: 'cst-revue', ic: '📋', lb: 'Revue de direction', lbShort: 'Revue', bg: '#EDE9FE', c: '#6D28D9' },
-    { id: 'cst-politique', ic: '📜', lb: 'Politique QHSE', lbShort: 'Politique', bg: '#F0FDF4', c: '#166534' },
+    { id: 'cst-politique', ic: '📜', lb: 'Politique QHSE', lbShort: 'Politique', bg: '#f0f0fa', c: '#000080' },
     { id: 'cst-actions', ic: '⚡', lb: "Plan d'actions strat.", lbShort: 'Actions', bg: '#FEF3C7', c: '#92400E' },
   ],
   audit: [

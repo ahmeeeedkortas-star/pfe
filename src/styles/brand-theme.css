@@ -76,7 +76,7 @@ body,
 }
 
 .t-logo-ic {
-  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.22);
+  box-shadow: 0 2px 10px rgba(0, 0, 128, 0.22);
 }
 
 .t-title {
@@ -94,11 +94,11 @@ body,
   background: linear-gradient(135deg, var(--color-primary-dark, #0369a1), var(--color-primary, #0284c7)) !important;
   color: #fff !important;
   border-color: transparent !important;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.28) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.28) !important;
 }
 
 .bp:hover {
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.35) !important;
 }
 
 .bg2 {
@@ -116,7 +116,7 @@ body,
 .sel:focus,
 textarea.fi:focus {
   border-color: var(--color-primary, #0284c7) !important;
-  box-shadow: 0 0 0 3px var(--color-primary-ring, rgba(2, 132, 199, 0.12)) !important;
+  box-shadow: 0 0 0 3px var(--color-primary-ring, rgba(0, 0, 128, 0.12)) !important;
 }
 
 .tab.active,
@@ -227,7 +227,7 @@ a.link-brand {
     color-mix(in srgb, var(--color-primary, #0284c7) 8%, transparent)
   ) !important;
   border-color: color-mix(in srgb, var(--color-primary, #0284c7) 35%, transparent) !important;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.28) !important;
 }
 
 /* ── Graphiques & loaders ── */
@@ -259,7 +259,7 @@ a.link-brand {
 .ss5-cl-action--accent {
   background: linear-gradient(135deg, var(--color-primary-dark, #0369a1), var(--color-primary, #0284c7)) !important;
   border-color: var(--color-primary, #0284c7) !important;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.28) !important;
 }
 
 .sec-checklist-modern .ss5-toolbar-btn--primary,
@@ -300,7 +300,7 @@ a.link-brand {
 /* Documentation React chunk — variables Tailwind si présentes */
 .doc-module-root {
   --primary: var(--color-primary, #0284c7);
-  --ring: var(--color-primary-ring, rgba(2, 132, 199, 0.12));
+  --ring: var(--color-primary-ring, rgba(0, 0, 128, 0.12));
 }
 
 /* Scrollbar discrète */
@@ -310,5 +310,5 @@ a.link-brand {
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover {
-  background: rgba(2, 132, 199, 0.45);
+  background: rgba(0, 0, 128, 0.45);
 }

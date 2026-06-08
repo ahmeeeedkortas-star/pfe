@@ -5,20 +5,20 @@
 .topbar::after {
   background: linear-gradient(
     90deg,
-    var(--color-primary, var(--qhse-quality)) 0%,
-    var(--color-primary-light, #38bdf8) 50%,
+    var(--color-primary, #000080) 0%,
+    var(--color-primary-light, #3333a0) 50%,
     transparent 100%
   ) !important;
   opacity: 0.65;
 }
 
 .t-search:focus-within {
-  border-color: color-mix(in srgb, var(--qhse-quality) 55%, var(--border)) !important;
-  box-shadow: 0 0 0 2px var(--qhse-quality-soft) !important;
+  border-color: color-mix(in srgb, var(--color-primary) 55%, var(--border)) !important;
+  box-shadow: 0 0 0 2px var(--color-primary-ring) !important;
 }
 
 .t-avatar {
-  background: linear-gradient(135deg, var(--qhse-quality-dark), var(--qhse-quality)) !important;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)) !important;
 }
 
 .t-badge {
@@ -27,11 +27,11 @@
 
 .btn.bp,
 .btn-primary {
-  background: linear-gradient(135deg, var(--qhse-quality-dark), var(--qhse-quality)) !important;
-  border-color: var(--qhse-quality-dark) !important;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)) !important;
+  border-color: var(--color-primary-dark) !important;
 }
 
 .btn.bp:hover {
   filter: brightness(1.06);
-  box-shadow: 0 4px 14px var(--qhse-quality-glow);
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.28);
 }

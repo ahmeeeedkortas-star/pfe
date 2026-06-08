@@ -21,7 +21,7 @@ export function renderCstPolitique() {
   const status = p.statut || 'Brouillon';
   const axes = (p.axes || [])
     .map((ax, i) => {
-      const col = i % 3 === 0 ? '#2563eb' : i % 3 === 1 ? '#dc2626' : '#16a34a';
+      const col = i % 3 === 0 ? '#000080' : i % 3 === 1 ? '#dc2626' : '#3333a0';
       return `<div class="cst-pol-axe-card" style="border-left-color:${col}">
         <div class="cst-pol-axe-head">
           <span class="cst-pol-axe-ic">${esc(ax.ic || '•')}</span>
@@ -71,8 +71,8 @@ export function renderCstPolitique() {
           </div>
           <div class="cst-toolbar-actions">
             <button type="button" class="btn bsm" data-cst-pol-edit-toggle onclick="window.cstPolFocusEditor?.()">✏ Modifier</button>
-            <button type="button" class="btn bsm bp" data-cst-pol-save onclick="window.cstPolSave?.()">💾 Enregistrer</button>
-            <button type="button" class="btn bsm bg2" data-cst-pol-publish onclick="window.cstPolPublish?.()">📢 Publier version</button>
+            <button type="button" class="btn bsm" data-cst-pol-save onclick="window.cstPolSave?.()">💾 Enregistrer</button>
+            <button type="button" class="btn bsm" data-cst-pol-publish onclick="window.cstPolPublish?.()">📢 Publier version</button>
             <button type="button" class="btn bsm" data-cst-pol-export-pdf onclick="window.cstPolExportPdf?.()">PDF</button>
             <button type="button" class="btn bsm" data-cst-pol-export-word onclick="window.cstPolExportWord?.()">Word</button>
             <button type="button" class="btn bsm" data-cst-pol-print onclick="window.cstPolPrint?.()">🖨 Imprimer</button>
@@ -111,7 +111,7 @@ export function renderCstPolitique() {
           <div class="cst-pol-info-row"><span>Organisation</span><strong>XPERT-MECA</strong></div>
           <div style="display:flex;gap:8px;margin-top:8px">
             <button type="button" class="btn bsm" data-cst-pol-meta onclick="window.cstPolOpenMeta?.()">✏ Modifier infos</button>
-            <button type="button" class="btn bsm bg2" data-cst-pol-publish onclick="window.cstPolPublish?.()">+ Révision</button>
+            <button type="button" class="btn bsm" data-cst-pol-publish onclick="window.cstPolPublish?.()">+ Révision</button>
           </div>
         </div>
         <div class="card">

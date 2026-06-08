@@ -6,7 +6,7 @@
 /* ── Tokens ── */
 :root {
   --bg: #f8fafc;
-  --blue: #0284c7;
+  --blue: #000080;
   --shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
 }
 
@@ -51,15 +51,16 @@ body {
 }
 
 .bp {
-  background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+  background: linear-gradient(135deg, #000066, #000080) !important;
   color: #fff !important;
   border-color: transparent !important;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.25) !important;
 }
 
 .bp:hover {
+  background: linear-gradient(135deg, #000050, #000066) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 128, 0.32) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
 }
 
 /* ── Tableaux ── */
@@ -94,7 +95,7 @@ body {
 
 .s-item.active {
   background: rgba(255, 255, 255, 0.12) !important;
-  border-left: 3px solid #0284c7 !important;
+  border-left: 3px solid #000080 !important;
   box-shadow: none !important;
 }
 
@@ -114,7 +115,7 @@ select.fi {
 .fi:focus,
 .sel:focus,
 textarea.fi:focus {
-  border-color: #0284c7 !important;
+  border-color: #000080 !important;
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1) !important;
 }
 

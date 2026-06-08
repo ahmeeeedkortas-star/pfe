@@ -9,20 +9,20 @@ import { BRAND_COLORS } from '../config/brand-colors.js';
 
 const ALL_MODULE_ICONS = {
   rc: [
-    { id: 'rc-liste', icon: 'list', lb: 'Liste', bg: '#E6F1FB', c: '#185FA5' },
+    { id: 'rc-liste', icon: 'list', lb: 'Liste', bg: '#f0f0fa', c: '#000080' },
     { id: 'rc-new', icon: 'plus', lb: 'Nouvelle', bg: '#EAF3DE', c: '#3B6D11' },
     { id: 'rc-fiche', icon: 'file', lb: 'Fiche', bg: '#FAEEDA', c: '#854F0B' },
-    { id: 'rc-8d', icon: 'layers', lb: 'Traitement 8D', bg: '#E6F1FB', c: '#185FA5' },
+    { id: 'rc-8d', icon: 'layers', lb: 'Traitement 8D', bg: '#f0f0fa', c: '#000080' },
     { id: 'rc-actions', icon: 'refresh', lb: 'Actions', bg: '#EAF3DE', c: '#3B6D11' },
-    { id: 'rc-kpi', icon: 'chart-pie', lb: 'KPI', bg: '#E6F1FB', c: '#185FA5' },
+    { id: 'rc-kpi', icon: 'chart-pie', lb: 'KPI', bg: '#f0f0fa', c: '#000080' },
   ],
   nc: [
-    { id: 'nc-liste', icon: 'list', lb: 'Liste NC', bg: '#E6F1FB', c: '#185FA5' },
+    { id: 'nc-liste', icon: 'list', lb: 'Liste NC', bg: '#E6F1FB', c: '#000080' },
     { id: 'nc-new', icon: 'plus', lb: 'Nouvelle NC', bg: '#EAF3DE', c: '#3B6D11' },
     { id: 'nc-fiche', icon: 'file', lb: 'Fiche', bg: '#FAEEDA', c: '#854F0B' },
     { id: 'nc-qrqc', icon: 'zap', lb: 'QRQC', bg: '#FCEBEB', c: '#A32D2D' },
     { id: 'nc-actions', icon: 'refresh', lb: 'Actions', bg: '#EAF3DE', c: '#3B6D11' },
-    { id: 'nc-kpi', icon: 'chart-pie', lb: 'KPI', bg: '#E6F1FB', c: '#185FA5' },
+    { id: 'nc-kpi', icon: 'chart-pie', lb: 'KPI', bg: '#E6F1FB', c: '#000080' },
     { id: 'nc-rapport', icon: 'file', lb: 'Rapport QRQC', lbShort: 'QRQC/mois', bg: '#FCEBEB', c: '#A32D2D' },
   ],
   audit: [
@@ -37,7 +37,7 @@ const ALL_MODULE_ICONS = {
     { id: 'audit-config', icon: 'settings', lb: 'Configuration', bg: '#F8FAFC', c: '#475569' },
   ],
   doc: [
-    { id: 'doc-tb', icon: 'grid', lb: 'Tableau de bord', lbShort: 'Tbord', bg: '#E6F1FB', c: '#185FA5' },
+    { id: 'doc-tb', icon: 'grid', lb: 'Tableau de bord', lbShort: 'Tbord', bg: '#f0f0fa', c: '#000080' },
     { id: 'doc-biblio', icon: 'folder', lb: 'Bibliothèque', lbShort: 'Documents', bg: '#FCEBEB', c: '#A32D2D' },
     { id: 'doc-create', icon: 'plus', lb: 'Nouveau document', lbShort: 'Nouveau', bg: '#EAF3DE', c: '#3B6D11' },
     { id: 'doc-history', icon: 'clock', lb: 'Historique & versions', lbShort: 'Historique', bg: '#FAEEDA', c: '#854F0B' },
@@ -59,10 +59,10 @@ const ALL_MODULE_ICONS = {
     { id: 'sec-checklists', icon: 'clipboard', lb: 'Checklists', bg: '#EAF3DE', c: '#3B6D11' },
     { id: 'sec-accidents', icon: 'siren', lb: 'Accidents', bg: '#FCEBEB', c: '#A32D2D' },
     { id: 'sec-urgence', icon: 'flame', lb: 'Plan urgence', bg: '#FFF3E0', c: '#C2410C' },
-    { id: 'sec-actions', icon: 'refresh', lb: 'Actions', bg: '#E6F1FB', c: '#185FA5' },
+    { id: 'sec-actions', icon: 'refresh', lb: 'Actions', bg: '#f0f0fa', c: '#000080' },
   ],
   env: [
-    { id: 'env-dash', icon: 'grid', lb: 'KPI & Tableau', bg: '#E6F1FB', c: '#185FA5' },
+    { id: 'env-dash', icon: 'grid', lb: 'KPI & Tableau', bg: '#f0f0fa', c: '#000080' },
     { id: 'env-aspects', icon: 'leaf', lb: 'Aspects env.', bg: '#E6F7EE', c: '#166534' },
     { id: 'env-objectifs', icon: 'target', lb: 'Objectifs', bg: '#EFF6FF', c: '#1E40AF' },
     { id: 'env-dechets', icon: 'recycle', lb: 'Déchets', bg: '#FEF3C7', c: '#92400E' },

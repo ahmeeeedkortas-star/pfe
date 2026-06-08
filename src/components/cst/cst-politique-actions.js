@@ -74,7 +74,7 @@ export function savePolitique({ publish = false, silent = false, refresh = true 
       publish ? 'Publication' : 'Enregistrement',
       publish ? `Version ${nextRev} publiée` : 'Contenu mis à jour'
     );
-    if (!silent) cstToast(publish ? 'Version publiée' : 'Politique enregistrée', '#16a34a');
+    if (!silent) cstToast(publish ? 'Version publiée' : 'Politique enregistrée', '#000080');
     if (refresh) cstRefresh('cst-politique');
     return true;
   } catch (err) {
@@ -101,7 +101,7 @@ export function addPolitiqueSignature() {
     dateSignature: todayCst(),
     signatures,
   };
-  cstToast('Signature ajoutée', '#16a34a');
+  cstToast('Signature ajoutée', '#000080');
   cstRefresh('cst-politique');
 }
 
@@ -114,7 +114,7 @@ export function addPolitiqueAxe() {
   const axes = Array.isArray(prev.axes) ? [...prev.axes] : [];
   axes.push({ titre: titre.trim(), texte: texte.trim(), ic: ic.trim() });
   window.CST_POLITIQUE = { ...prev, axes, dateMiseAJour: todayCst() };
-  cstToast('Axe ajouté', '#16a34a');
+  cstToast('Axe ajouté', '#000080');
   cstRefresh('cst-politique');
 }
 
@@ -150,7 +150,7 @@ export function openPolitiqueMetaModal() {
     </div>`;
   document.body.insertAdjacentHTML(
     'beforeend',
-    cstModal('Informations document', 'Métadonnées politique', '#14532d', '#16a34a', body, { entity: 'politique-meta' })
+    cstModal('Informations document', 'Métadonnées politique', '#000066', '#000080', body, { entity: 'politique-meta' })
   );
 }
 
@@ -166,7 +166,7 @@ export function savePolitiqueMetaFromModal() {
     signataire: document.getElementById('cst_pol_meta_sign')?.value?.trim() || prev.signataire,
   };
   closeCstModal();
-  cstToast('Informations mises à jour', '#16a34a');
+  cstToast('Informations mises à jour', '#000080');
   cstRefresh('cst-politique');
 }
 
@@ -181,7 +181,7 @@ export function exportPolitiqueWord() {
   a.click();
   a.remove();
   URL.revokeObjectURL(a.href);
-  cstToast('Export Word terminé', '#16a34a');
+  cstToast('Export Word terminé', '#000080');
 }
 
 export function exportPolitiquePdf() {

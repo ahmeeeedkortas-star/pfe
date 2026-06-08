@@ -7,7 +7,7 @@
 }
 
 #app-shell {
-  background: var(--bg, #eef2f8) !important;
+  background: var(--bg, #ffffff) !important;
 }
 
 #app-shell > .body,

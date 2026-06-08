@@ -24,7 +24,7 @@
   border-radius: 8px;
   background: #fff;
   border: 1px solid #dbeafe;
-  color: #185fa5;
+  color: #000080;
   flex-shrink: 0;
 }
 
@@ -104,9 +104,9 @@
 }
 
 .period-level-tab.active {
-  background: #185fa5;
+  background: #000080;
   color: #fff;
-  box-shadow: 0 1px 3px rgba(24, 95, 165, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 128, 0.28);
 }
 
 .period-picker-wrap {
@@ -143,8 +143,8 @@
 .period-native.fi:focus,
 .period-native.sel:focus {
   outline: none;
-  border-color: #185fa5;
-  box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.15);
+  border-color: #000080;
+  box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.12);
 }
 
 .period-field-sel {

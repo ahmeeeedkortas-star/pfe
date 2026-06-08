@@ -24,6 +24,7 @@
 @import './actions-pages.css';
 @import './workflow-actions.css';
 @import './nc-rapport.css';
+@import './nc-module-theme.css';
 @import './kpi-simple.css';
 @import './rc-actions.css';
 @import './rc-new.css';
@@ -44,8 +45,12 @@
 @import './home-modern.css';
 @import './home-industrial.css';
 @import './platform-theme-light.css';
-@import './theme-dark.css';
 @import './settings-page.css';
 @import './platform-unified.css';
+@import './theme-navy-white.css';
 /* Accueil d'origine — mosaïque photo + modules (priorité max) */
 @import './home-photos.css';
+@import './buttons-global.css';
+@import './home-unified-theme.css';
+@import './theme-dark.css';
+@import './brand-navy-unified.css';

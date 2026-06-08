@@ -7,7 +7,7 @@
   --brand-red-muted: rgba(226, 27, 36, 0.14);
   --brand-red-glow: rgba(226, 27, 36, 0.28);
   --brand-red-glow-strong: rgba(226, 27, 36, 0.38);
-  --brand-focus-ring: rgba(59, 130, 246, 0.22);
+  --brand-focus-ring: rgba(0, 0, 128, 0.22);
 
   --brand-black: #0a0a0a;
   --brand-black-soft: #141414;
@@ -18,11 +18,11 @@
   --brand-surface: #f7f7f8;
   --brand-surface-muted: #eeeef0;
 
-  /* ── Pilier QHSE ── */
-  --qhse-quality: #0284c7;
-  --qhse-quality-dark: #0369a1;
-  --qhse-quality-soft: rgba(59, 130, 246, 0.16);
-  --qhse-quality-glow: rgba(59, 130, 246, 0.35);
+  /* ── Pilier QHSE Qualité → navy #000080 ── */
+  --qhse-quality: #000080;
+  --qhse-quality-dark: #000066;
+  --qhse-quality-soft: rgba(0, 0, 128, 0.14);
+  --qhse-quality-glow: rgba(0, 0, 128, 0.28);
 
   --qhse-env: #22c55e;
   --qhse-env-dark: #16a34a;
@@ -39,26 +39,26 @@
   --accent-nav-dark: var(--color-primary-dark);
   --accent-nav-muted: var(--color-primary-soft);
 
-  /* Fonds plateforme (bleu nuit) */
-  --platform-deep: #0a1020;
-  --platform-navy: #0f172a;
-  --platform-navy-mid: #1e293b;
-  --platform-glass: rgba(15, 23, 42, 0.65);
-  --platform-glass-border: rgba(255, 255, 255, 0.1);
+  /* Fonds plateforme (bleu marine #000080) */
+  --platform-deep: #000050;
+  --platform-navy: #000080;
+  --platform-navy-mid: #000066;
+  --platform-glass: rgba(0, 0, 128, 0.72);
+  --platform-glass-border: rgba(255, 255, 255, 0.12);
 
-  /* Alias legacy → pilier Qualité */
+  /* Alias legacy → navy #000080 */
   --navy: var(--platform-navy);
   --navy2: var(--platform-navy-mid);
-  --blue: #0284c7;
-  --blue-soft: #eff6ff;
+  --blue: #000080;
+  --blue-soft: #f0f0fa;
 
-  /* Fond & texte (modules clairs) */
-  --bg: #f8fafc;
+  /* Fond & texte (modules clairs — blanc lumineux) */
+  --bg: #ffffff;
   --bg-elevated: var(--brand-white);
-  --border: #d8e0ec;
-  --border-strong: #c2cddc;
-  --text: #0f172a;
-  --text-secondary: #475569;
+  --border: #e4e8f0;
+  --border-strong: #ccd4e0;
+  --text: #1a1a2e;
+  --text-secondary: #4a5568;
   --muted: #64748b;
 
   /* Sémantique QHSE */
@@ -77,29 +77,29 @@
   --topbar-h: 64px;
   --icon-nav-h: auto;
 
-  /* Identité UI — bleu/blanc (primaire plateforme) */
-  --color-primary: #0284c7;
-  --color-primary-dark: #0369a1;
-  --color-primary-light: #38bdf8;
-  --color-primary-soft: #f0f9ff;
-  --color-primary-ring: rgba(2, 132, 199, 0.12);
+  /* Identité UI — blanc lumineux + bleu marine #000080 */
+  --color-primary: #000080;
+  --color-primary-dark: #000066;
+  --color-primary-light: #3333a0;
+  --color-primary-soft: #f0f0fa;
+  --color-primary-ring: rgba(0, 0, 128, 0.14);
   --color-surface: #ffffff;
-  --color-surface-muted: #f8fafc;
-  --color-border: #e2e8f0;
-  --color-text: #0f172a;
+  --color-surface-muted: #f8f9fc;
+  --color-border: #e4e8f0;
+  --color-text: #1a1a2e;
   --color-text-muted: #64748b;
 
-  /* Typographie — échelle unifiée */
+  /* Typographie — échelle rééquilibrée */
   --font: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Plus Jakarta Sans', var(--font);
   --fs-base: 14px;
-  --fs-sm: 12px;
-  --fs-xs: 10px;
-  --fs-lg: 16px;
-  --fs-xl: 18px;
-  --fs-2xl: 22px;
-  --lh: 1.5;
-  --lh-tight: 1.35;
+  --fs-sm: 13px;
+  --fs-xs: 11px;
+  --fs-lg: 17px;
+  --fs-xl: 20px;
+  --fs-2xl: 26px;
+  --lh: 1.55;
+  --lh-tight: 1.4;
 
   /* Espacements */
   --space-1: 4px;
@@ -117,7 +117,7 @@
   --icon-tile-nav: 36px;
   --icon-tile-sidebar: 30px;
   --icon-brand: 38px;
-  --tile-color: var(--qhse-quality);
+  --tile-color: var(--color-primary);
 
   /* Espacements */
   --space-content-x: 20px;
@@ -139,6 +139,6 @@
   --transition-fast: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --app-bg-dark: linear-gradient(180deg, #0a1020 0%, #0f172a 38%, #1e293b 100%);
+  --app-bg-dark: linear-gradient(180deg, #000050 0%, #000080 38%, #000066 100%);
   --icon-stroke-width: 2;
 }

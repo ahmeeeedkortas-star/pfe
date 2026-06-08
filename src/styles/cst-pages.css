@@ -62,13 +62,17 @@
   max-width: 52rem;
 }
 
-.main[data-module='cst'] .mod-actions {
-  flex-shrink: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  align-items: center;
+.main[data-module='cst'] {
+  --cst-accent: #000080;
+  --cst-accent-dark: #000066;
+  --cst-accent-soft: #f0f0fa;
+  --cst-accent-border: #d0d0e8;
 }
+
+.main[data-module='cst'] .mod-topbar {
+  border-left-color: var(--cst-accent, #000080) !important;
+}
+
 
 /* ── Zone contenu CST : typo lisible, pas d'animations parasites ── */
 .content.cst-mode {
@@ -358,7 +362,7 @@
 }
 
 .cst-impact--up {
-  color: #16a34a;
+  color: var(--green, #16a34a);
 }
 
 .cst-impact--down {
@@ -406,6 +410,21 @@
   padding: 14px 16px;
   border-radius: 10px 10px 0 0;
   color: #fff;
+  background: linear-gradient(135deg, var(--cst-accent-dark, #000066), var(--cst-accent, #000080)) !important;
+}
+
+.cst-modal-gradient .cst-modal-close-btn,
+.cst-modal-gradient .btn[data-cst-trace-modal-close] {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.cst-modal-gradient .cst-modal-close-btn:hover,
+.cst-modal-gradient .btn[data-cst-trace-modal-close]:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  color: #fff !important;
 }
 
 .cst-modal-title {
@@ -446,8 +465,8 @@
 }
 
 .cst-revue-item.is-active {
-  border-color: #7c3aed;
-  background: #f5f3ff;
+  border-color: var(--cst-accent, #000080);
+  background: var(--cst-accent-soft, #f0f0fa);
 }
 
 .cst-revue-item-id {
@@ -466,7 +485,7 @@
 }
 
 .cst-revue-header {
-  background: linear-gradient(135deg, #4c1d95, #7c3aed);
+  background: linear-gradient(135deg, var(--cst-accent-dark, #000066), var(--cst-accent, #000080));
   color: #fff;
   padding: 14px 16px;
   border-radius: 10px 10px 0 0;
@@ -507,7 +526,7 @@
 
 .cst-revue-dec {
   padding: 10px 12px;
-  background: #f0fdf4;
+  background: var(--cst-accent-soft, #f0f0fa);
   border-radius: 8px;
   margin-bottom: 8px;
   font-size: var(--fs-sm);
@@ -539,7 +558,7 @@
 }
 
 .cst-pol-header {
-  background: linear-gradient(135deg, #14532d, #16a34a);
+  background: linear-gradient(135deg, var(--cst-accent-dark, #000066), var(--cst-accent, #000080));
   color: #fff;
   padding: 16px 18px;
 }
@@ -810,7 +829,7 @@
 
 .cst-year-badge {
   font-size: 9px;
-  color: #16a34a;
+  color: var(--cst-accent, #000080);
   font-weight: 700;
 }
 
@@ -892,7 +911,7 @@
 }
 
 .cst-pol-banner {
-  background: linear-gradient(135deg, #0b7a39, #0ca145);
+  background: linear-gradient(135deg, var(--cst-accent-dark, #000066), var(--cst-accent, #000080));
   color: #fff;
   border-radius: 10px;
   padding: 10px 14px;
@@ -990,24 +1009,50 @@
 }
 
 .cst-pol-word.cst-pol-editing .cst-rich-body {
-  outline: 2px solid rgba(37, 99, 235, 0.35);
+  outline: 2px solid rgba(0, 0, 128, 0.35);
   outline-offset: 2px;
 }
 
-.content.cst-mode .btn[data-cst-pol-save],
-.content.cst-mode .btn[data-cst-pol-publish],
-.content.cst-mode .btn[data-cst-pol-meta],
-.content.cst-mode .btn[data-cst-pol-export-pdf],
-.content.cst-mode .btn[data-cst-pol-export-word],
-.content.cst-mode .btn[data-cst-pol-print],
-.content.cst-mode .btn[data-cst-pol-add-signature],
-.content.cst-mode .btn[data-cst-pol-add-axe],
-.content.cst-mode .btn[data-cst-pol-edit-toggle],
+[data-page='cst-politique'] .btn[data-cst-pol-edit-toggle],
+[data-page='cst-politique'] .btn[data-cst-pol-save],
+[data-page='cst-politique'] .btn[data-cst-pol-publish],
+[data-page='cst-politique'] .btn[data-cst-pol-export-pdf],
+[data-page='cst-politique'] .btn[data-cst-pol-export-word],
+[data-page='cst-politique'] .btn[data-cst-pol-print],
+[data-page='cst-politique'] .btn[data-cst-pol-add-signature],
+[data-page='cst-politique'] .btn[data-cst-pol-add-axe],
+[data-page='cst-politique'] .btn[data-cst-pol-meta],
+[data-page='cst-politique'] .btn[data-cst-pol-del-axe],
 #mod-actions .btn[data-cst-politique-edit] {
   pointer-events: auto !important;
   cursor: pointer;
   position: relative;
   z-index: 3;
+  background: #ffffff !important;
+  border: 1.5px solid var(--cst-accent-border, #d0d0e8) !important;
+  color: var(--cst-accent, #000080) !important;
+  font-weight: 600 !important;
+  font-size: var(--fs-sm, 13px) !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+[data-page='cst-politique'] .btn[data-cst-pol-edit-toggle]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-save]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-publish]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-export-pdf]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-export-word]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-print]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-add-signature]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-add-axe]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-meta]:hover:not(:disabled),
+[data-page='cst-politique'] .btn[data-cst-pol-del-axe]:hover:not(:disabled),
+#mod-actions .btn[data-cst-politique-edit]:hover:not(:disabled) {
+  background: var(--cst-accent-soft, #f0f0fa) !important;
+  border-color: var(--cst-accent, #000080) !important;
+  color: var(--cst-accent-dark, #000066) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 128, 0.12) !important;
 }
 
 .cst-pol-sign-row {
@@ -1109,7 +1154,7 @@
 }
 
 .cst-pol-autosave[data-tone='ok'] {
-  color: #15803d;
+  color: var(--cst-accent, #000080);
 }
 
 .cst-form-hint {

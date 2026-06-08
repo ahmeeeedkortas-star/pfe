@@ -70,7 +70,7 @@ export const CST_PESTEL_SEED = [
     id: 'PST-002',
     facteur: 'Économique',
     ic: '💰',
-    col: '#16a34a',
+    col: '#000080',
     analyse:
       "Inflation modérée sur l'acier ; pression sur les marges clients automobile et aéronautique.",
     impact: '—',
@@ -100,7 +100,7 @@ export const CST_PESTEL_SEED = [
     id: 'PST-005',
     facteur: 'Environnemental',
     ic: '🌿',
-    col: '#16a34a',
+    col: '#000080',
     analyse:
       'Renforcement des exigences clients sur bilan carbone et gestion des déchets.',
     impact: '—',

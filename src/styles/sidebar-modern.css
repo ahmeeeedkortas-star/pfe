@@ -51,8 +51,8 @@
 
 .s-section {
   color: rgba(255, 255, 255, 0.35) !important;
-  font-size: 9px !important;
-  letter-spacing: 0.16em !important;
+  font-size: var(--fs-xs) !important;
+  letter-spacing: 0.1em !important;
 }
 
 .xm-icon-sidebar {

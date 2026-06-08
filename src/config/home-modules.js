@@ -25,9 +25,9 @@ export const HOME_MODULES = [
     label: 'Contexte & Stratégie',
     sub: 'SWOT · Risques · Politique QHSE',
     badgeKey: null,
-    bc: '#16a34a',
-    bg: 'linear-gradient(165deg,#14532d 0%,#166534 50%,#22c55e 100%)',
-    shadow: '0 8px 28px rgba(22,163,74,.32)',
+    bc: '#000080',
+    bg: 'linear-gradient(165deg,#000050 0%,#000066 50%,#000080 100%)',
+    shadow: '0 8px 28px rgba(0,0,128,.32)',
   },
   {
     mod: 'audit',
