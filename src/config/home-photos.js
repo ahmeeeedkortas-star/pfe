@@ -6,8 +6,13 @@ const local = (name) => `/home/${name}`;
 /** Photo plein écran (public/home/factory-hero.png) */
 export const HOME_HERO_BG = local('factory-hero.png');
 
+/** Fond accueil unifié — atelier robotisé / usine (fichiers dans public/home/) */
+export const HOME_UNIFIED_BG = local('factory-hero.png');
+export const HOME_UNIFIED_BG_ALT = local('bg-platform.jpg');
+export const HOME_UNIFIED_BG_ALT2 = local('industrial-hero.jpg');
+
 export const HOME_ISO_BADGES = [
-  { code: 'ISO 9001', title: 'Qualité', color: '#3b82f6' },
+  { code: 'ISO 9001', title: 'Qualité', color: '#000080' },
   { code: 'ISO 14001', title: 'Environnement', color: '#22c55e' },
   { code: 'ISO 45001', title: 'SST', color: '#f97316' },
 ];
@@ -79,6 +84,21 @@ function photoUrls(panel) {
 /** Arrière-plan unique (remplace la mosaïque 6 panneaux). */
 export function renderHomePhotoMosaic() {
   return `<div class="home-hero-bg" role="presentation" style="background-image:url('${HOME_HERO_BG}')"></div>`;
+}
+
+/** Fond photo pleine page — usine / robots / atelier (image locale garantie). */
+export function renderHomeUnifiedBackground() {
+  const alt = HOME_UNIFIED_BG_ALT;
+  const alt2 = HOME_UNIFIED_BG_ALT2;
+  return `<img
+    class="home-hero-bg-img home-hero-bg--unified"
+    src="${HOME_UNIFIED_BG}"
+    alt=""
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    onerror="if(!this.dataset.fbk){this.dataset.fbk='1';this.src='${alt}';}else if(this.dataset.fbk==='1'){this.dataset.fbk='2';this.src='${alt2}';}"
+  />`;
 }
 
 export function renderHomeIsoBar() {

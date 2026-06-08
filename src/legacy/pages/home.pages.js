@@ -1,5 +1,5 @@
 /** @legacy — Accueil harmonisé sidebar navy + contenu blanc */
-import { renderHomeIsoBar } from '../../config/home-photos.js';
+import { renderHomeIsoBar, renderHomeUnifiedBackground } from '../../config/home-photos.js';
 import { renderHomeModuleIcon, renderHomeKpiIcon } from '../../components/icons/home-module-icons.js';
 import { BRAND_LOGO_URL, BRAND_NAME, BRAND_TAGLINE } from '../../config/brand.js';
 import { isEmptyPlatform } from '../../core/empty-platform.js';
@@ -45,16 +45,14 @@ function renderModules() {
     <div class="hmod" role="button" tabindex="0"
       onclick="goModule('${m.mod}')"
       onkeydown="if(event.key==='Enter')goModule('${m.mod}')"
-      style="--mod-accent:${m.bc};animation-delay:${0.15 + i * 0.04}s">
-      <div class="hmod-card">
-        ${badge != null ? `<span class="hmod-badge">${badge}</span>` : ''}
-        <div class="hmod-icon-wrap" style="background:${m.bg};box-shadow:${m.shadow}">
-          ${renderHomeModuleIcon(m.mod, 42)}
-        </div>
-        <span class="hmod-title">${m.label}</span>
-        <span class="hmod-sub">${m.sub}</span>
-        <span class="hmod-arrow">Accéder →</span>
+      style="animation-delay:${0.15 + i * 0.04}s">
+      <div class="hmod-wrap" style="background:${m.bg};box-shadow:${m.shadow}">
+        <div class="hmod-shine"></div>
+        ${renderHomeModuleIcon(m.mod, 48)}
+        ${badge != null ? `<span class="hmod-badge" style="background:${m.bc}">${badge}</span>` : ''}
       </div>
+      <span class="hmod-title">${m.label}</span>
+      <span class="hmod-sub">${m.sub}</span>
     </div>`;
   }).join('');
 }
@@ -64,8 +62,8 @@ export default {
 <div class="home-wrap home-wrap--unified">
 
   <div class="home-bg home-bg--unified" aria-hidden="true">
-    <div class="home-bg__blob home-bg__blob--navy"></div>
-    <div class="home-bg__blob home-bg__blob--soft"></div>
+    ${renderHomeUnifiedBackground()}
+    <div class="home-bg__overlay home-bg__overlay--navy"></div>
   </div>
 
   <div class="home-content">
